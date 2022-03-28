@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/icon_charge"
+        android:icon="@drawable/icon_charge"
+        app:showAsAction="always"
+        android:title="충전소"
+        />
+
+    <item
+        android:id="@+id/icon_my"
+        android:icon="@drawable/icon_my"
+        app:showAsAction="always"
+        android:title="내서재"
+        />
+
+    <item
+        android:id="@+id/icon_giftbox"
+        android:icon="@drawable/icon_giftbox"
+        app:showAsAction="always"
+        android:title="선물함"
+        />
+
+    <item
+        android:id="@+id/icon_search"
+        android:icon="@drawable/icon_search"
+        app:showAsAction="always"
+        android:title="검색"
+        />
+
+    <item
+        android:id="@+id/icon_headmenu"
+        android:icon="@drawable/icon_headmenu"
+        app:showAsAction="always"
+        android:title="메뉴"
+        />
+
+</menu>

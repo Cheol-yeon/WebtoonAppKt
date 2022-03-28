@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sv_main"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_inscrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_percent="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:id="@+id/view_1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#FFAAAAAA"
+                app:layout_constraintTop_toBottomOf="@id/cv_icon_charge" />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/iv_logo"
+                android:layout_width="110dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/logo_toptoon"
+                app:layout_constraintBottom_toTopOf="@id/view_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_icon_charge"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toTopOf="@id/view_1"
+                app:layout_constraintStart_toEndOf="@id/guideline_1"
+                app:layout_constraintTop_toTopOf="@id/cv_icon_my">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/icon_charge" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="충전소"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_icon_my"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toTopOf="@id/view_1"
+                app:layout_constraintStart_toEndOf="@id/cv_icon_charge"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/icon_my" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="내서재"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_icon_giftbox"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toTopOf="@id/view_1"
+                app:layout_constraintStart_toEndOf="@id/cv_icon_my"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/icon_giftbox" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="선물함"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_icon_search"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toTopOf="@id/view_1"
+                app:layout_constraintStart_toEndOf="@id/cv_icon_giftbox"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/icon_search" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="검색"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_icon_headmenu"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toTopOf="@id/view_1"
+                app:layout_constraintStart_toEndOf="@id/cv_icon_search"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/icon_headmenu" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="메뉴"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+
+            <FrameLayout
+                android:id="@+id/fl_main"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/view_1" />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/iv_footer"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:background="#324357"
+                android:src="@drawable/app_footer_android_750_88"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fl_main" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_footer1"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:background="#667c8084"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_footer">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="약관/"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="개인정보 처리 방침"
+                    android:textColor="#e63740"
+                    android:textSize="11sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="청소년 보호정책"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="연재/광고제휴 제안"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="공지사항"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_footer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#667c8084"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_footer1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="서울시 강남구 테헤란로 509 엔씨타워 9층"
+                    android:textColor="#7C8084"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="사업자등록번호:113-86-80702 대표자 : 유정석"
+                    android:textColor="#7C8084"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="통신판매업신고:제2019-서울강남-04615호"
+                    android:textColor="#7C8084"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="고객센터 : 1644-1531 toptoon@toptoon.com"
+                    android:textColor="#7C8084"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="\n 탑툰의 모든 콘텐츠는 저작권법에 의거 보호받고 있습니다."
+                    android:textColor="#5f8fd5"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_footerBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#667c8084"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_footer2">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_isms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/footer_bannershape"
+                    android:drawableStart="@drawable/logo_isms"
+                    android:drawablePadding="3dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="정보보호 관리체계 인증"
+                    android:textColor="#6D7681"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/cl_footerBanner" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_logo_ok_copyright_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="2dp"
+                    android:background="@drawable/footer_bannershape"
+                    android:drawableStart="@drawable/logo_ok_copyright_new"
+                    android:drawablePadding="3dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="저작권오케이"
+                    android:textColor="#6D7681"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/tv_isms"
+                    app:layout_constraintTop_toTopOf="@id/cl_footerBanner" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_clean"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="2dp"
+                    android:background="@drawable/footer_bannershape"
+                    android:drawableStart="@drawable/logo_clean"
+                    android:drawablePadding="3dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="클린사이트 선정"
+                    android:textColor="#6D7681"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/tv_logo_ok_copyright_new"
+                    app:layout_constraintTop_toTopOf="@id/cl_footerBanner" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_innobiz"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/footer_bannershape"
+                    android:drawableStart="@drawable/logo_innobiz"
+                    android:drawablePadding="3dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="기술혁신형중소기업"
+                    android:textColor="#6D7681"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/tv_isms"
+                    app:layout_constraintStart_toStartOf="@id/tv_isms"
+                    app:layout_constraintTop_toBottomOf="@id/tv_isms" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_happy"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/footer_bannershape"
+                    android:drawableStart="@drawable/logo_happy"
+                    android:drawablePadding="3dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="행복더함 사회공헌대상"
+                    android:textColor="#6D7681"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/tv_innobiz"
+                    app:layout_constraintTop_toBottomOf="@id/tv_isms" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_news"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/footer_bannershape"
+                    android:drawableStart="@drawable/logo_news"
+                    android:drawablePadding="3dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="언론보도"
+                    android:textColor="#6D7681"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/tv_happy"
+                    app:layout_constraintTop_toBottomOf="@id/tv_isms" />
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/logo_topco"
+                    app:layout_constraintBottom_toBottomOf="@id/cl_footerBanner"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_innobiz" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    <android.support.design.widget.CoordinatorLayout-->
+    <!--        android:id="@+id/cd_Layout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        >-->
+
+    <!--        <android.support.constraint.utils.ImageFilterView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/logo_toptoon"-->
+    <!--            />-->
+
+    <!--        <com.google.android.material.appbar.AppBarLayout-->
+    <!--            android:id="@+id/ab_Layout"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            />-->
+
+    <!--        <androidx.appcompat.widget.Toolbar-->
+    <!--            android:id="@+id/tb_mainToolbar"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:menu="@menu/main_toolbar_menu"-->
+    <!--            />-->
+
+    <!--    </android.support.design.widget.CoordinatorLayout>-->
