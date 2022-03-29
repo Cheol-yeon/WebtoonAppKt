@@ -52,13 +52,6 @@ public class MainFragment extends Fragment {
 
         initializeBanner();
 
-        PagerAdapter adapter = new bannerAdapter(getActivity(), bannerImage);
-
-        binding.vp2Banner.setClipToPadding(false);
-        binding.vp2Banner.setAdapter(adapter);
-
-
-
     }
 
     public void initializeBanner() {
