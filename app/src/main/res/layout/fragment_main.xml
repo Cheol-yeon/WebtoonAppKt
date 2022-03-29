@@ -130,8 +130,51 @@
         app:layout_constraintTop_toBottomOf="@id/btn5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/first_banner"
         android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
         />
+
+    <LinearLayout
+        android:id="@+id/layoutIndicators"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/vp2_banner"
+        app:layout_constraintEnd_toEndOf="@id/guideline_fmain1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_ranking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="인기 순위"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vp2_banner"
+        android:layout_marginStart="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        />
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline_fmain1"
+        app:layout_constraintTop_toBottomOf="@id/vp2_banner"
+        app:layout_constraintBottom_toTopOf="@id/view_1"
+        />
+
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="#FFAAAAAA"
+        app:layout_constraintTop_toBottomOf="@id/tv_ranking" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
