@@ -22,13 +22,13 @@ public class RankingAdapter extends FragmentStateAdapter {
                 return RankingFragment.newInstance("Realtime");
             }
             case 1 : {
-                return RankingFragment.newInstance("Realtime");
+                return RankingFragment.newInstance("Update");
             }
             case 2 : {
-                return RankingFragment.newInstance("Realtime");
+                return RankingFragment.newInstance("New");
             }
             case 3 : {
-                return RankingFragment.newInstance("Realtime");
+                return RankingFragment.newInstance("Sale");
             }
         }
 
