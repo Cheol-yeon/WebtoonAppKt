@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_sign"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:src="@drawable/ranking_realtime1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rank_icon_custom"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="2dp"
+        android:text="1위"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/iv_sign"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_webtoonTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="편의점 샛별이"
+        android:textColor="@color/black"
+        android:textSize="12.8sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/tv_rank"
+        app:layout_constraintTop_toTopOf="@id/tv_rank" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_webtoonSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="제67화 최종화 - 영업종료"
+        android:textColor="#666666"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@id/tv_rank"
+        app:layout_constraintTop_toBottomOf="@id/tv_rank" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_eyeIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ico_view_02"
+        app:layout_constraintStart_toStartOf="@id/tv_rank"
+        app:layout_constraintTop_toBottomOf="@id/tv_webtoonSubTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_hit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="3dp"
+        android:text="5,803만"
+        android:textColor="#666666"
+        app:layout_constraintStart_toEndOf="@id/iv_eyeIcon"
+        app:layout_constraintTop_toBottomOf="@id/tv_webtoonSubTitle" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

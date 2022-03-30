@@ -17,10 +17,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+
 
 public class MainFragment extends Fragment {
 
-    ViewPager2 viewPager2;
+    ViewPager2 viewPager2_banner, viewPager2_ranking;
+    private LinearLayout layoutIndicator;
+    TabLayout tabLayout;
+
     private String[] images = new String[] {
             "https://shtosebzjw.akamaized.net/assets/upfile/banner/10017_1626067667.9501.png",
             "https://shtosebzjw.akamaized.net/assets/upfile/banner/12459_1646045778.3586.jpg",
@@ -33,7 +39,6 @@ public class MainFragment extends Fragment {
             "https://shtosebzjw.akamaized.net/assets/upfile/banner/10130_1612516944.6079.png",
             "https://shtosebzjw.akamaized.net/assets/upfile/banner/12549_1647229540.3236.jpg"
     };
-    private LinearLayout layoutIndicator;
 
     public MainFragment() {
         // Required empty public constructor
@@ -57,14 +62,16 @@ public class MainFragment extends Fragment {
 
         // 초기화
         layoutIndicator = view.findViewById(R.id.layoutIndicators);
-        viewPager2 = view.findViewById(R.id.vp2_banner);
+        viewPager2_banner = view.findViewById(R.id.vp2_banner);
+        viewPager2_ranking = view.findViewById(R.id.vp2_ranking);
+        tabLayout = view.findViewById(R.id.tl_ranking);
 
         // 뷰페이저2 아이템 지정
-        viewPager2.setOffscreenPageLimit(1);
-        viewPager2.setAdapter(new BannerAdapter(this.getContext(), images));
+        viewPager2_banner.setOffscreenPageLimit(1);
+        viewPager2_banner.setAdapter(new BannerAdapter(this.getContext(), images));
 
-        // 뷰페이저2 위치에 따라 점으로 표시
-        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+        // 배너 이동할 때 마다 몇번째인지 알려줌
+        viewPager2_banner.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
@@ -77,8 +84,33 @@ public class MainFragment extends Fragment {
         setupIndicators(images.length);
 
 
+        viewPager2_ranking.setAdapter(new RankingAdapter(this.getActivity()));
+        // 인기순위 탭 레이아웃과 목록 표시할 ViewPager2 연결
+        new TabLayoutMediator(tabLayout, viewPager2_ranking,(tab, position) -> {
+
+            switch (position) {
+                case 0 : {
+                    tab.setText("실시간");
+                    break;
+                }
+                case 1 : {
+                    tab.setText("업데이트");
+                    break;
+                }
+                case 2 : {
+                    tab.setText("신작");
+                    break;
+                }
+                case 3 : {
+                    tab.setText("할인");
+                    break;
+                }
+            }
+
+        }).attach();
     }
 
+    // 뷰페이저2 위치에 따라 점으로 표시
     private void setupIndicators(int count) {
         ImageFilterView[] indicators = new ImageFilterView[count];
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
@@ -92,10 +124,18 @@ public class MainFragment extends Fragment {
                     R.drawable.bg_indicator_inactive));
             indicators[i].setLayoutParams(params);
             layoutIndicator.addView(indicators[i]);
+
+            layoutIndicator.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
         }
         setCurrentIndicator(0);
     }
 
+    // 선택되어있는 뷰페이저 아이콘 변경
     private void setCurrentIndicator(int position) {
         int childCount = layoutIndicator.getChildCount();
         int max = Integer.MAX_VALUE;

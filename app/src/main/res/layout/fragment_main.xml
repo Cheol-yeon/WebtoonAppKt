@@ -161,12 +161,20 @@
         />
 
     <com.google.android.material.tabs.TabLayout
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:id="@+id/tl_ranking"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/guideline_fmain1"
         app:layout_constraintTop_toBottomOf="@id/vp2_banner"
         app:layout_constraintBottom_toTopOf="@id/view_1"
+        android:layout_marginEnd="15dp"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="#666666"
+        app:tabTextAppearance="@style/tab_text"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabRippleColor="@null"
         />
 
     <View
@@ -176,5 +184,15 @@
         android:layout_marginTop="15dp"
         android:background="#FFAAAAAA"
         app:layout_constraintTop_toBottomOf="@id/tv_ranking" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp2_ranking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/view_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
