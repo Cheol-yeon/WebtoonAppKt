@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator;
 
 
 public class MainFragment extends Fragment {
@@ -69,6 +70,9 @@ public class MainFragment extends Fragment {
         // 뷰페이저2 아이템 지정
         viewPager2_banner.setOffscreenPageLimit(1);
         viewPager2_banner.setAdapter(new BannerAdapter(this.getContext(), images));
+
+//        SpringDotsIndicator indicator = view.findViewById(R.id.layoutIndicators);
+//        indicator.setViewPager2(viewPager2_banner);
 
         // 배너 이동할 때 마다 몇번째인지 알려줌
         viewPager2_banner.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {

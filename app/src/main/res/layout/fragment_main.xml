@@ -134,6 +134,18 @@
         android:layout_marginBottom="10dp"
         />
 
+<!--    <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator-->
+<!--        android:id="@+id/layoutIndicators"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center"-->
+<!--        android:paddingBottom="8dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/vp2_banner"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/guideline_fmain1"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        android:layout_marginStart="20dp" />-->
+
     <LinearLayout
         android:id="@+id/layoutIndicators"
         android:layout_width="0dp"
