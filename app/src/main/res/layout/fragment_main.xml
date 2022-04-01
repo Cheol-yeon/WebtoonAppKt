@@ -127,67 +127,64 @@
         android:id="@+id/vp2_banner"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        app:layout_constraintTop_toBottomOf="@id/btn5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="10dp"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn5" />
 
-<!--    <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator-->
-<!--        android:id="@+id/layoutIndicators"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:gravity="center"-->
-<!--        android:paddingBottom="8dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="@id/vp2_banner"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/guideline_fmain1"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        android:layout_marginStart="20dp" />-->
+    <!--    <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator-->
+    <!--        android:id="@+id/layoutIndicators"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:gravity="center"-->
+    <!--        android:paddingBottom="8dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/vp2_banner"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/guideline_fmain1"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        android:layout_marginStart="20dp" />-->
 
     <LinearLayout
         android:id="@+id/layoutIndicators"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
         android:gravity="center"
+        android:orientation="horizontal"
         android:paddingBottom="8dp"
         app:layout_constraintBottom_toBottomOf="@id/vp2_banner"
         app:layout_constraintEnd_toEndOf="@id/guideline_fmain1"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="20dp"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_ranking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="인기 순위"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vp2_banner"
         android:layout_marginStart="15dp"
-        android:textSize="15sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
         android:layout_marginTop="15dp"
-        />
+        android:text="인기 순위"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vp2_banner" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tl_ranking"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toTopOf="@id/view_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/vp2_banner"
-        app:layout_constraintBottom_toTopOf="@id/view_1"
-        android:layout_marginEnd="15dp"
-        app:tabSelectedTextColor="@color/white"
-        app:tabTextColor="#666666"
-        app:tabTextAppearance="@style/tab_text"
+        app:tabBackground="@drawable/tab_selector"
         app:tabGravity="center"
         app:tabIndicatorHeight="0dp"
-        app:tabBackground="@drawable/tab_selector"
         app:tabRippleColor="@null"
-        />
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextAppearance="@style/tab_text"
+        app:tabTextColor="#666666" />
 
     <View
         android:id="@+id/view_1"
@@ -201,10 +198,201 @@
         android:id="@+id/vp2_ranking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/view_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_1" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_bradingImg"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/branding_1004_150"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vp2_ranking" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_keyword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8sp"
+        android:text="맞춤키워드"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_bradingImg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:drawableEnd="@drawable/icon_arw_more"
+        android:text="전체보기"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_keyword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_keyword" />
+
+    <RadioGroup
+        android:id="@+id/rg_filter1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        android:checkedButton="@id/rb_button1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_keyword">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingHorizontal="5dp">
+
+            <RadioButton
+                android:id="@+id/rb_button1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="oneRadioButtonClicked"
+                android:paddingVertical="3dp"
+                android:text="#인기작품"
+                android:textColor="@drawable/selector_radio_text"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/rb_button2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="oneRadioButtonClicked"
+                android:paddingVertical="3dp"
+                android:text="#탑툰독점"
+                android:textColor="@drawable/selector_radio_text"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/rb_button3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="oneRadioButtonClicked"
+                android:paddingVertical="3dp"
+                android:text="#매일무료"
+                android:textColor="@drawable/selector_radio_text"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/rb_button4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="oneRadioButtonClicked"
+                android:paddingVertical="3dp"
+                android:text="#전체무료"
+                android:textColor="@drawable/selector_radio_text"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="5dp">
+
+            <RadioButton
+                android:id="@+id/rb_button5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="oneRadioButtonClicked"
+                android:paddingVertical="3dp"
+                android:text="#핫한신작"
+                android:textColor="@drawable/selector_radio_text"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/rb_button6"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="oneRadioButtonClicked"
+                android:paddingVertical="3dp"
+                android:text="#리메이크"
+                android:textColor="@drawable/selector_radio_text"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/rb_button7"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="oneRadioButtonClicked"
+                android:paddingVertical="3dp"
+                android:text="#백만조회"
+                android:textColor="@drawable/selector_radio_text"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/rb_button8"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="oneRadioButtonClicked"
+                android:paddingVertical="3dp"
+                android:text="#정주행각"
+                android:textColor="@drawable/selector_radio_text"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+    </RadioGroup>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_keyWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rg_filter1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

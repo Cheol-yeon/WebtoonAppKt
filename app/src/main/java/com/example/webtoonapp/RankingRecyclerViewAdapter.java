@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class RankingRecyclerViewAdapter extends RecyclerView.Adapter<RankingRecyclerViewAdapter.ViewHolder> {
 
     private Context context;
-    private ArrayList<WebtoonData> webtoonDataArrayList;
+    private ArrayList<RankingWebtoonData> rankingWebtoonDataArrayList;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -34,8 +34,8 @@ public class RankingRecyclerViewAdapter extends RecyclerView.Adapter<RankingRecy
         }
     }
 
-    public RankingRecyclerViewAdapter(ArrayList<WebtoonData> data, Context context) {
-        this.webtoonDataArrayList = data;
+    public RankingRecyclerViewAdapter(ArrayList<RankingWebtoonData> data, Context context) {
+        this.rankingWebtoonDataArrayList = data;
         this.context = context;
     }
 
@@ -48,21 +48,21 @@ public class RankingRecyclerViewAdapter extends RecyclerView.Adapter<RankingRecy
 
     @Override
     public void onBindViewHolder(@NonNull RankingRecyclerViewAdapter.ViewHolder holder, int position) {
-        WebtoonData webtoonData = webtoonDataArrayList.get(position);
+        RankingWebtoonData rankingWebtoonData = rankingWebtoonDataArrayList.get(position);
 
         Glide.with(context)
-                .load(webtoonData.getImg())
+                .load(rankingWebtoonData.getImg())
                 .into(holder.sign);
-        holder.rank.setText(webtoonData.getRank());
-        holder.title.setText(webtoonData.getTitle());
-        holder.subTitle.setText(webtoonData.getSub_title());
-        holder.hit.setText(webtoonData.getHit());
+        holder.rank.setText(rankingWebtoonData.getRank());
+        holder.title.setText(rankingWebtoonData.getTitle());
+        holder.subTitle.setText(rankingWebtoonData.getSub_title());
+        holder.hit.setText(rankingWebtoonData.getHit());
 
     }
 
     @Override
     public int getItemCount() {
-        return webtoonDataArrayList==null?0:webtoonDataArrayList.size();
+        return rankingWebtoonDataArrayList ==null?0: rankingWebtoonDataArrayList.size();
     }
 
 

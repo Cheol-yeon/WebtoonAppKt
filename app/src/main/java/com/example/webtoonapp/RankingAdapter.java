@@ -17,6 +17,7 @@ public class RankingAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
 
+        // 선택 된 탭에따른 값을 프래그먼트에 전달하여 알맞은 웹툰 정보 불러오기
         switch (position) {
             case 0 : {
                 return RankingFragment.newInstance("Realtime");

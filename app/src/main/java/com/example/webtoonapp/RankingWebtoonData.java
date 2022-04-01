@@ -1,6 +1,6 @@
 package com.example.webtoonapp;
 
-public class WebtoonData {
+public class RankingWebtoonData {
 
     public String img;
     public String title;
@@ -8,7 +8,7 @@ public class WebtoonData {
     public String hit;
     public String rank;
 
-    public WebtoonData(String img, String title, String sub_title, String hit, String rank) {
+    public RankingWebtoonData(String img, String title, String sub_title, String hit, String rank) {
         this.img = img;
         this.title = title;
         this.sub_title = sub_title;
@@ -16,7 +16,7 @@ public class WebtoonData {
         this.rank = rank;
     }
 
-    public WebtoonData() {
+    public RankingWebtoonData() {
     }
 
     public String getImg() {
