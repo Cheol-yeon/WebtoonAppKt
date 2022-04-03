@@ -1,18 +1,18 @@
 package com.example.webtoonapp;
 
-public class KeywordWebtoonData {
+public class WebtoonData {
 
     public String img;
     public String title;
     public String sub_title;
 
-    public KeywordWebtoonData(String img, String title, String sub_title) {
+    public WebtoonData(String img, String title, String sub_title) {
         this.img = img;
         this.title = title;
         this.sub_title = sub_title;
     }
 
-    public KeywordWebtoonData() {
+    public WebtoonData() {
     }
 
     public String getImg() {

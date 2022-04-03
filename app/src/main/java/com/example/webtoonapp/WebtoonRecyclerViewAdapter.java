@@ -14,14 +14,14 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class KeywordRecyclerViewAdapter extends RecyclerView.Adapter<KeywordRecyclerViewAdapter.ViewHolder> {
+public class WebtoonRecyclerViewAdapter extends RecyclerView.Adapter<WebtoonRecyclerViewAdapter.ViewHolder> {
 
     Context context;
-    ArrayList<KeywordWebtoonData> keywordWebtoonDataArrayList;
+    ArrayList<WebtoonData> webtoonDataArrayList;
 
-    public KeywordRecyclerViewAdapter(ArrayList<KeywordWebtoonData> keywordWebtoonDataArrayList, Context context) {
+    public WebtoonRecyclerViewAdapter(ArrayList<WebtoonData> webtoonDataArrayList, Context context) {
         this.context = context;
-        this.keywordWebtoonDataArrayList = keywordWebtoonDataArrayList;
+        this.webtoonDataArrayList = webtoonDataArrayList;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -39,24 +39,24 @@ public class KeywordRecyclerViewAdapter extends RecyclerView.Adapter<KeywordRecy
 
     @NonNull
     @Override
-    public KeywordRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+    public WebtoonRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.keyword_recyclerview_item, viewGroup, false);
-        return new KeywordRecyclerViewAdapter.ViewHolder(view);
+        return new WebtoonRecyclerViewAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull KeywordRecyclerViewAdapter.ViewHolder holder, int position) {
-        KeywordWebtoonData keywordWebtoonData = keywordWebtoonDataArrayList.get(position);
+    public void onBindViewHolder(@NonNull WebtoonRecyclerViewAdapter.ViewHolder holder, int position) {
+        WebtoonData webtoonData = webtoonDataArrayList.get(position);
 
         Glide.with(context)
-                .load(keywordWebtoonData.getImg())
+                .load(webtoonData.getImg())
                 .into(holder.sign);
-        holder.title.setText(keywordWebtoonData.getTitle());
-        holder.subTitle.setText(keywordWebtoonData.getSub_title());
+        holder.title.setText(webtoonData.getTitle());
+        holder.subTitle.setText(webtoonData.getSub_title());
     }
 
     @Override
     public int getItemCount() {
-        return keywordWebtoonDataArrayList == null ? 0 : keywordWebtoonDataArrayList.size();
+        return webtoonDataArrayList == null ? 0 : webtoonDataArrayList.size();
     }
 }

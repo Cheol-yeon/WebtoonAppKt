@@ -45,14 +45,13 @@ public class MainFragment extends Fragment {
             radioButtonRecommand8;
 
 
-    ArrayList<KeywordWebtoonData> keywordWebtoonDataArrayList;
-    KeywordWebtoonData keywordWebtoonData;
+    ArrayList<WebtoonData> webtoonDataArrayList;
+    WebtoonData webtoonData;
 
     ViewPager2 viewPager2_banner, viewPager2_ranking;
     private LinearLayout layoutIndicator;
     TabLayout tabLayout;
     RadioGroup radioGroupKeyword;
-    RadioButton radioButtonKeyword;
 
     private RecyclerView keyWordRecycle;
     private RecyclerView.Adapter keyWordRecycleAdapter;
@@ -61,6 +60,14 @@ public class MainFragment extends Fragment {
     private RecyclerView recommandRecycle;
     private RecyclerView.Adapter recommandRecycleAdapter;
     private RecyclerView.LayoutManager recommandRecycleLayoutManager;
+
+    private RecyclerView waitRecycle;
+    private RecyclerView.Adapter waitRecycleAdapter;
+    private RecyclerView.LayoutManager waitRecycleLayoutManager;
+
+    private RecyclerView coinRecycle;
+    private RecyclerView.Adapter coinRecycleAdapter;
+    private RecyclerView.LayoutManager coinRecycleLayoutManager;
 
     private String[] images = new String[]{
             "https://shtosebzjw.akamaized.net/assets/upfile/banner/10017_1626067667.9501.png",
@@ -107,6 +114,8 @@ public class MainFragment extends Fragment {
         tabLayout = view.findViewById(R.id.tl_ranking);
         keyWordRecycle = view.findViewById(R.id.rv_keyWord);
         recommandRecycle = view.findViewById(R.id.rv_recommand);
+        waitRecycle = view.findViewById(R.id.rv_waitFree);
+        coinRecycle = view.findViewById(R.id.rv_1coin);
 
 
         // 뷰페이저2 아이템 지정
@@ -164,8 +173,18 @@ public class MainFragment extends Fragment {
         recommandRecycleLayoutManager = new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false);
         recommandRecycle.setLayoutManager(recommandRecycleLayoutManager);
 
+        waitRecycle.setHasFixedSize(true);
+        waitRecycleLayoutManager = new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false);
+        waitRecycle.setLayoutManager(waitRecycleLayoutManager);
+
+        coinRecycle.setHasFixedSize(true);
+        coinRecycleLayoutManager = new LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false);
+        coinRecycle.setLayoutManager(coinRecycleLayoutManager);
+
         getKeywordData(1);
         getRecommandData(1);
+        getWaitData();
+        getCoinData();
 
     }
 
@@ -496,440 +515,592 @@ public class MainFragment extends Fragment {
 
     // 눌린 버튼의 값을 불러와 Data저장 후 RecyclerView로 출력
     public void getKeywordData(int btnNo) {
-        keywordWebtoonDataArrayList = new ArrayList<>();
+        webtoonDataArrayList = new ArrayList<>();
 
         if (btnNo == 1) {
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10838_1648718702.0184.jpg");
-            keywordWebtoonData.setTitle("앙(怏)");
-            keywordWebtoonData.setSub_title("김진수");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10838_1648718702.0184.jpg");
+            webtoonData.setTitle("앙(怏)");
+            webtoonData.setSub_title("김진수");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10291_1558085744.2081.jpg");
-            keywordWebtoonData.setTitle("사각사각 로맨스");
-            keywordWebtoonData.setSub_title("말초코칩");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10291_1558085744.2081.jpg");
+            webtoonData.setTitle("사각사각 로맨스");
+            webtoonData.setSub_title("말초코칩");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/2631_1550797351.4958.jpg");
-            keywordWebtoonData.setTitle("청소부K");
-            keywordWebtoonData.setSub_title("신진우&홍순식");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/2631_1550797351.4958.jpg");
+            webtoonData.setTitle("청소부K");
+            webtoonData.setSub_title("신진우&홍순식");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10847_1646971047.4575.jpg");
-            keywordWebtoonData.setTitle("신혼좀비");
-            keywordWebtoonData.setSub_title("생쥐");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10847_1646971047.4575.jpg");
+            webtoonData.setTitle("신혼좀비");
+            webtoonData.setSub_title("생쥐");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/5412_1580460555.8698.jpg");
-            keywordWebtoonData.setTitle("편의점 샛별이");
-            keywordWebtoonData.setSub_title("활화산&스기키 하루미");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/5412_1580460555.8698.jpg");
+            webtoonData.setTitle("편의점 샛별이");
+            webtoonData.setSub_title("활화산&스기키 하루미");
+            webtoonDataArrayList.add(webtoonData);
         } else if (btnNo == 2 || btnNo == 4) {
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10838_1648718702.0184.jpg");
-            keywordWebtoonData.setTitle("앙(怏)");
-            keywordWebtoonData.setSub_title("김진수");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10838_1648718702.0184.jpg");
+            webtoonData.setTitle("앙(怏)");
+            webtoonData.setSub_title("김진수");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10855_1646962607.1277.jpg");
-            keywordWebtoonData.setTitle("모쉬의 슬기로운 먹는생활");
-            keywordWebtoonData.setSub_title("모쉬");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10855_1646962607.1277.jpg");
+            webtoonData.setTitle("모쉬의 슬기로운 먹는생활");
+            webtoonData.setSub_title("모쉬");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10847_1646971047.4575.jpg");
-            keywordWebtoonData.setTitle("신혼좀비");
-            keywordWebtoonData.setSub_title("생쥐");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10847_1646971047.4575.jpg");
+            webtoonData.setTitle("신혼좀비");
+            webtoonData.setSub_title("생쥐");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10854_1646962017.567.jpg");
-            keywordWebtoonData.setTitle("무협소녀와 강아지");
-            keywordWebtoonData.setSub_title("웹티&을코");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10854_1646962017.567.jpg");
+            webtoonData.setTitle("무협소녀와 강아지");
+            webtoonData.setSub_title("웹티&을코");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10839_1646707637.0069.png");
-            keywordWebtoonData.setTitle("심야십담");
-            keywordWebtoonData.setSub_title("시코르스키&천도담");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10839_1646707637.0069.png");
+            webtoonData.setTitle("심야십담");
+            webtoonData.setSub_title("시코르스키&천도담");
+            webtoonDataArrayList.add(webtoonData);
         } else if (btnNo == 3) {
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10806_1642490978.5388.jpg");
-            keywordWebtoonData.setTitle("천일의 아내");
-            keywordWebtoonData.setSub_title("0510&베리&죠이나");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10806_1642490978.5388.jpg");
+            webtoonData.setTitle("천일의 아내");
+            webtoonData.setSub_title("0510&베리&죠이나");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10200_1550461930.3529.jpg");
-            keywordWebtoonData.setTitle("프릭");
-            keywordWebtoonData.setSub_title("신진우&홍순식");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10200_1550461930.3529.jpg");
+            webtoonData.setTitle("프릭");
+            webtoonData.setSub_title("신진우&홍순식");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10300_1560234034.5599.jpg");
-            keywordWebtoonData.setTitle("Mad:콜때기");
-            keywordWebtoonData.setSub_title("고영훈&김찬영");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10300_1560234034.5599.jpg");
+            webtoonData.setTitle("Mad:콜때기");
+            webtoonData.setSub_title("고영훈&김찬영");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10634_1640604653.6298.jpg");
-            keywordWebtoonData.setTitle("잘못 전한 편지");
-            keywordWebtoonData.setSub_title("배뚱&생선찜");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10634_1640604653.6298.jpg");
+            webtoonData.setTitle("잘못 전한 편지");
+            webtoonData.setSub_title("배뚱&생선찜");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10860_1646898197.8547.jpg");
-            keywordWebtoonData.setTitle("낮에 뜨는 별");
-            keywordWebtoonData.setSub_title("채은,고다고");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10860_1646898197.8547.jpg");
+            webtoonData.setTitle("낮에 뜨는 별");
+            webtoonData.setSub_title("채은,고다고");
+            webtoonDataArrayList.add(webtoonData);
         } else if (btnNo == 5) {
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10838_1648718702.0184.jpg");
-            keywordWebtoonData.setTitle("앙(怏)");
-            keywordWebtoonData.setSub_title("김진수");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10838_1648718702.0184.jpg");
+            webtoonData.setTitle("앙(怏)");
+            webtoonData.setSub_title("김진수");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10859_1646896306.429.jpg");
-            keywordWebtoonData.setTitle("불순한 동거동락");
-            keywordWebtoonData.setSub_title("황한영,이룸");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10859_1646896306.429.jpg");
+            webtoonData.setTitle("불순한 동거동락");
+            webtoonData.setSub_title("황한영,이룸");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10871_1648016636.5417.jpg");
-            keywordWebtoonData.setTitle("무역: 운명을 거스르다");
-            keywordWebtoonData.setSub_title("작은새우/일차원동만");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10871_1648016636.5417.jpg");
+            webtoonData.setTitle("무역: 운명을 거스르다");
+            webtoonData.setSub_title("작은새우/일차원동만");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10870_1648016298.5089.jpg");
-            keywordWebtoonData.setTitle("만고지존");
-            keywordWebtoonData.setSub_title("태일생수/잭 노르웨이");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10870_1648016298.5089.jpg");
+            webtoonData.setTitle("만고지존");
+            webtoonData.setSub_title("태일생수/잭 노르웨이");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10858_1646894514.7813.jpg");
-            keywordWebtoonData.setTitle("그 남자의 계략");
-            keywordWebtoonData.setSub_title("이채영,한우주");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10858_1646894514.7813.jpg");
+            webtoonData.setTitle("그 남자의 계략");
+            webtoonData.setSub_title("이채영,한우주");
+            webtoonDataArrayList.add(webtoonData);
         } else if (btnNo == 6) {
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10174_1574317553.4498.png");
-            keywordWebtoonData.setTitle("동네 누나");
-            keywordWebtoonData.setSub_title("타르초&견자");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10174_1574317553.4498.png");
+            webtoonData.setTitle("동네 누나");
+            webtoonData.setSub_title("타르초&견자");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10590_1612338793.8735.jpg");
-            keywordWebtoonData.setTitle("당구장 사랑이");
-            keywordWebtoonData.setSub_title("캄쟈&성백&옥충이");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10590_1612338793.8735.jpg");
+            webtoonData.setTitle("당구장 사랑이");
+            webtoonData.setSub_title("캄쟈&성백&옥충이");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10563_1603689733.1208.jpg");
-            keywordWebtoonData.setTitle("돈과 여자");
-            keywordWebtoonData.setSub_title("김홍태&TB Production");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10563_1603689733.1208.jpg");
+            webtoonData.setTitle("돈과 여자");
+            webtoonData.setSub_title("김홍태&TB Production");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10541_1599189957.4919.jpg");
-            keywordWebtoonData.setTitle("아내가 돌아왔다");
-            keywordWebtoonData.setSub_title("양파&꼬붕");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10541_1599189957.4919.jpg");
+            webtoonData.setTitle("아내가 돌아왔다");
+            webtoonData.setSub_title("양파&꼬붕");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10535_1596419741.0281.jpg");
-            keywordWebtoonData.setTitle("고소한 여자");
-            keywordWebtoonData.setSub_title("에일리언&frog");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10535_1596419741.0281.jpg");
+            webtoonData.setTitle("고소한 여자");
+            webtoonData.setSub_title("에일리언&frog");
+            webtoonDataArrayList.add(webtoonData);
         } else if (btnNo == 7) {
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10291_1558085744.2081.jpg");
-            keywordWebtoonData.setTitle("사각사각 로맨스");
-            keywordWebtoonData.setSub_title("말초코칩");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10291_1558085744.2081.jpg");
+            webtoonData.setTitle("사각사각 로맨스");
+            webtoonData.setSub_title("말초코칩");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/8859_1501840279.2393.jpg");
-            keywordWebtoonData.setTitle("그녀, 윤희");
-            keywordWebtoonData.setSub_title("병수씨");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/8859_1501840279.2393.jpg");
+            webtoonData.setTitle("그녀, 윤희");
+            webtoonData.setSub_title("병수씨");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10568_1604900784.8866.jpg");
-            keywordWebtoonData.setTitle("속도위반 대표님과 계약 아내");
-            keywordWebtoonData.setSub_title("Shuibuciyuan&kkworld&Flower");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10568_1604900784.8866.jpg");
+            webtoonData.setTitle("속도위반 대표님과 계약 아내");
+            webtoonData.setSub_title("Shuibuciyuan&kkworld&Flower");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/8322_1496987995.183.jpg");
-            keywordWebtoonData.setTitle("복수할까? 연애할까?");
-            keywordWebtoonData.setSub_title("핑지");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/8322_1496987995.183.jpg");
+            webtoonData.setTitle("복수할까? 연애할까?");
+            webtoonData.setSub_title("핑지");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/5412_1580460555.8698.jpg");
-            keywordWebtoonData.setTitle("편의점 샛별이");
-            keywordWebtoonData.setSub_title("활화산&스기키 하루미");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/5412_1580460555.8698.jpg");
+            webtoonData.setTitle("편의점 샛별이");
+            webtoonData.setSub_title("활화산&스기키 하루미");
+            webtoonDataArrayList.add(webtoonData);
         } else if (btnNo == 8) {
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/5412_1580460555.8698.jpg");
-            keywordWebtoonData.setTitle("편의점 샛별이");
-            keywordWebtoonData.setSub_title("활화산&스기키 하루미");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/5412_1580460555.8698.jpg");
+            webtoonData.setTitle("편의점 샛별이");
+            webtoonData.setSub_title("활화산&스기키 하루미");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/2631_1550797351.4958.jpg");
-            keywordWebtoonData.setTitle("청소부K");
-            keywordWebtoonData.setSub_title("신진우&홍순식");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/2631_1550797351.4958.jpg");
+            webtoonData.setTitle("청소부K");
+            webtoonData.setSub_title("신진우&홍순식");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/1345_1553841689.2188.jpg");
-            keywordWebtoonData.setTitle("뽈쟁이 툰");
-            keywordWebtoonData.setSub_title("뽈쟁이");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/1345_1553841689.2188.jpg");
+            webtoonData.setTitle("뽈쟁이 툰");
+            webtoonData.setSub_title("뽈쟁이");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10303_1559888119.0164.jpg");
-            keywordWebtoonData.setTitle("음지킹");
-            keywordWebtoonData.setSub_title("서영관");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10303_1559888119.0164.jpg");
+            webtoonData.setTitle("음지킹");
+            webtoonData.setSub_title("서영관");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/8859_1501840279.2393.jpg");
-            keywordWebtoonData.setTitle("그녀, 윤희");
-            keywordWebtoonData.setSub_title("병수씨");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/8859_1501840279.2393.jpg");
+            webtoonData.setTitle("그녀, 윤희");
+            webtoonData.setSub_title("병수씨");
+            webtoonDataArrayList.add(webtoonData);
         }
 
-        keyWordRecycleAdapter = new KeywordRecyclerViewAdapter(keywordWebtoonDataArrayList, getContext());
+        keyWordRecycleAdapter = new WebtoonRecyclerViewAdapter(webtoonDataArrayList, getContext());
         keyWordRecycle.setAdapter(keyWordRecycleAdapter);
     }
 
     public void getRecommandData(int btnNo) {
-        keywordWebtoonDataArrayList = new ArrayList<>();
+        webtoonDataArrayList = new ArrayList<>();
 
         if (btnNo == 1) {
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10838_1648718702.0184.jpg");
-            keywordWebtoonData.setTitle("앙(怏)");
-            keywordWebtoonData.setSub_title("김진수");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10291_1558085744.2081.jpg");
+            webtoonData.setTitle("사각사각 로맨스");
+            webtoonData.setSub_title("말초코칩");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10291_1558085744.2081.jpg");
-            keywordWebtoonData.setTitle("사각사각 로맨스");
-            keywordWebtoonData.setSub_title("말초코칩");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10561_1602826603.2833.jpg");
+            webtoonData.setTitle("비밀수업");
+            webtoonData.setSub_title("왕강철&미나짱");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/2631_1550797351.4958.jpg");
-            keywordWebtoonData.setTitle("청소부K");
-            keywordWebtoonData.setSub_title("신진우&홍순식");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10639_1623142571.2271.jpg");
+            webtoonData.setTitle("절친의 모든 것");
+            webtoonData.setSub_title("형작가&타르초");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10847_1646971047.4575.jpg");
-            keywordWebtoonData.setTitle("신혼좀비");
-            keywordWebtoonData.setSub_title("생쥐");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10663_1625193390.6024.jpg");
+            webtoonData.setTitle("대표님 살살해요");
+            webtoonData.setSub_title("웹티&올코");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/5412_1580460555.8698.jpg");
-            keywordWebtoonData.setTitle("편의점 샛별이");
-            keywordWebtoonData.setSub_title("활화산&스기키 하루미");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
-        } else if (btnNo == 2 || btnNo == 4) {
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10838_1648718702.0184.jpg");
-            keywordWebtoonData.setTitle("앙(怏)");
-            keywordWebtoonData.setSub_title("김진수");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10568_1604900784.8866.jpg");
+            webtoonData.setTitle("속도위반 대표님과 계약 아내");
+            webtoonData.setSub_title("Shuibuciyuan&kkworld&Flower");
+            webtoonDataArrayList.add(webtoonData);
+        } else if (btnNo == 2) {
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10561_1602826603.2833.jpg");
+            webtoonData.setTitle("비밀수업");
+            webtoonData.setSub_title("왕강철&미나짱");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10855_1646962607.1277.jpg");
-            keywordWebtoonData.setTitle("모쉬의 슬기로운 먹는생활");
-            keywordWebtoonData.setSub_title("모쉬");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/5412_1580460555.8698.jpg");
+            webtoonData.setTitle("편의점 샛별이");
+            webtoonData.setSub_title("활화산&스기키 하루미");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10847_1646971047.4575.jpg");
-            keywordWebtoonData.setTitle("신혼좀비");
-            keywordWebtoonData.setSub_title("생쥐");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10576_1607593022.2276.jpg");
+            webtoonData.setTitle("하숙일기");
+            webtoonData.setSub_title("김제타&용의자H");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10854_1646962017.567.jpg");
-            keywordWebtoonData.setTitle("무협소녀와 강아지");
-            keywordWebtoonData.setSub_title("웹티&을코");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10663_1625193390.6024.jpg");
+            webtoonData.setTitle("대표님 살살해요");
+            webtoonData.setSub_title("웹티&올코");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10839_1646707637.0069.png");
-            keywordWebtoonData.setTitle("심야십담");
-            keywordWebtoonData.setSub_title("시코르스키&천도담");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10704_1627867858.6998.jpg");
+            webtoonData.setTitle("동아리");
+            webtoonData.setSub_title("슈리넬&QRQ");
+            webtoonDataArrayList.add(webtoonData);
         } else if (btnNo == 3) {
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10806_1642490978.5388.jpg");
-            keywordWebtoonData.setTitle("천일의 아내");
-            keywordWebtoonData.setSub_title("0510&베리&죠이나");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/2631_1550797351.4958.jpg");
+            webtoonData.setTitle("청소부K");
+            webtoonData.setSub_title("신진우&홍순식");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10200_1550461930.3529.jpg");
-            keywordWebtoonData.setTitle("프릭");
-            keywordWebtoonData.setSub_title("신진우&홍순식");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10838_1648718702.0184.jpg");
+            webtoonData.setTitle("앙(怏)");
+            webtoonData.setSub_title("김진수");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10300_1560234034.5599.jpg");
-            keywordWebtoonData.setTitle("Mad:콜때기");
-            keywordWebtoonData.setSub_title("고영훈&김찬영");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10850_1646644682.9942.jpg");
+            webtoonData.setTitle("전설 헌터로 키워지는 중입니다");
+            webtoonData.setSub_title("Beimuliuhuo&Cat Comics");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10634_1640604653.6298.jpg");
-            keywordWebtoonData.setTitle("잘못 전한 편지");
-            keywordWebtoonData.setSub_title("배뚱&생선찜");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10448_1579570605.6723.jpg");
+            webtoonData.setTitle("작은 전쟁");
+            webtoonData.setSub_title("얀새&타르초");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10860_1646898197.8547.jpg");
-            keywordWebtoonData.setTitle("낮에 뜨는 별");
-            keywordWebtoonData.setSub_title("채은,고다고");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/3979_1453854610.8889.jpg");
+            webtoonData.setTitle("독고");
+            webtoonData.setSub_title("Meen&백승훈");
+            webtoonDataArrayList.add(webtoonData);
+        } else if (btnNo == 4) {
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/1345_1553841689.2188.jpg");
+            webtoonData.setTitle("뽈쟁이 툰");
+            webtoonData.setSub_title("뽈쟁이");
+            webtoonDataArrayList.add(webtoonData);
+
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/3211_1459301291.5446.jpg");
+            webtoonData.setTitle("뽈쟁이의 BBOL한 일상만화");
+            webtoonData.setSub_title("뽈쟁이");
+            webtoonDataArrayList.add(webtoonData);
+
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/7939_1493109178.9834.jpg");
+            webtoonData.setTitle("희키툰");
+            webtoonData.setSub_title("희키");
+            webtoonDataArrayList.add(webtoonData);
+
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10642_1623822955.9469.jpg");
+            webtoonData.setTitle("역전의 샤이닝스타");
+            webtoonData.setSub_title("웹티&올코");
+            webtoonDataArrayList.add(webtoonData);
+
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10855_1646962607.1277.jpg");
+            webtoonData.setTitle("모쉬의 슬기로운 먹는생활");
+            webtoonData.setSub_title("모쉬");
+            webtoonDataArrayList.add(webtoonData);
         } else if (btnNo == 5) {
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10838_1648718702.0184.jpg");
-            keywordWebtoonData.setTitle("앙(怏)");
-            keywordWebtoonData.setSub_title("김진수");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10850_1646644682.9942.jpg");
+            webtoonData.setTitle("전설 헌터로 키워지는 중입니다");
+            webtoonData.setSub_title("Beimuliuhuo&Cat Comics");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10859_1646896306.429.jpg");
-            keywordWebtoonData.setTitle("불순한 동거동락");
-            keywordWebtoonData.setSub_title("황한영,이룸");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10802_1641785551.1569.jpg");
+            webtoonData.setTitle("레벨업에 미친 의사");
+            webtoonData.setSub_title("ZhiNiaoCun&JSCR");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10871_1648016636.5417.jpg");
-            keywordWebtoonData.setTitle("무역: 운명을 거스르다");
-            keywordWebtoonData.setSub_title("작은새우/일차원동만");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10866_1647591657.2121.jpg");
+            webtoonData.setTitle("현질해서 최강으로 레벨업!");
+            webtoonData.setSub_title("대목&노뚠뚠, 반위");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10870_1648016298.5089.jpg");
-            keywordWebtoonData.setTitle("만고지존");
-            keywordWebtoonData.setSub_title("태일생수/잭 노르웨이");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10848_1646639017.4884.jpg");
+            webtoonData.setTitle("말단 병사에서 군주까지");
+            webtoonData.setSub_title("doip&소울풍&2631");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10858_1646894514.7813.jpg");
-            keywordWebtoonData.setTitle("그 남자의 계략");
-            keywordWebtoonData.setSub_title("이채영,한우주");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10586_1614672726.6537.jpg");
+            webtoonData.setTitle("신데렐라의 역습");
+            webtoonData.setSub_title("유룩");
+            webtoonDataArrayList.add(webtoonData);
         } else if (btnNo == 6) {
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10174_1574317553.4498.png");
-            keywordWebtoonData.setTitle("동네 누나");
-            keywordWebtoonData.setSub_title("타르초&견자");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10839_1646707637.0069.png");
+            webtoonData.setTitle("심야십담");
+            webtoonData.setSub_title("시코르스키&천도담");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10590_1612338793.8735.jpg");
-            keywordWebtoonData.setTitle("당구장 사랑이");
-            keywordWebtoonData.setSub_title("캄쟈&성백&옥충이");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/7223_1486026549.5581.jpg");
+            webtoonData.setTitle("기기묘묘");
+            webtoonData.setSub_title("깔선&멀덕");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10563_1603689733.1208.jpg");
-            keywordWebtoonData.setTitle("돈과 여자");
-            keywordWebtoonData.setSub_title("김홍태&TB Production");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10340_1566267954.2236.jpg");
+            webtoonData.setTitle("블러디 발렌타인 : 인류종말");
+            webtoonData.setSub_title("Bluemoon&Twenty4");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10541_1599189957.4919.jpg");
-            keywordWebtoonData.setTitle("아내가 돌아왔다");
-            keywordWebtoonData.setSub_title("양파&꼬붕");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/8450_1497938769.8037.jpg");
+            webtoonData.setTitle("사일런트 문");
+            webtoonData.setSub_title("빨간 휴지");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10535_1596419741.0281.jpg");
-            keywordWebtoonData.setTitle("고소한 여자");
-            keywordWebtoonData.setSub_title("에일리언&frog");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10492_1596518995.6398.jpg");
+            webtoonData.setTitle("원킬");
+            webtoonData.setSub_title("팀 잔나비");
+            webtoonDataArrayList.add(webtoonData);
         } else if (btnNo == 7) {
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10291_1558085744.2081.jpg");
-            keywordWebtoonData.setTitle("사각사각 로맨스");
-            keywordWebtoonData.setSub_title("말초코칩");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10291_1558085744.2081.jpg");
+            webtoonData.setTitle("사각사각 로맨스");
+            webtoonData.setSub_title("말초코칩");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/8859_1501840279.2393.jpg");
-            keywordWebtoonData.setTitle("그녀, 윤희");
-            keywordWebtoonData.setSub_title("병수씨");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/1345_1553841689.2188.jpg");
+            webtoonData.setTitle("뽈쟁이 툰");
+            webtoonData.setSub_title("뽈쟁이");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10568_1604900784.8866.jpg");
-            keywordWebtoonData.setTitle("속도위반 대표님과 계약 아내");
-            keywordWebtoonData.setSub_title("Shuibuciyuan&kkworld&Flower");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10847_1646971047.4575.jpg");
+            webtoonData.setTitle("신혼좀비");
+            webtoonData.setSub_title("생쥐");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/8322_1496987995.183.jpg");
-            keywordWebtoonData.setTitle("복수할까? 연애할까?");
-            keywordWebtoonData.setSub_title("핑지");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10360_1566543133.7083.png");
+            webtoonData.setTitle("일탈 : 즐거운 나의 집");
+            webtoonData.setSub_title("병수씨");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/5412_1580460555.8698.jpg");
-            keywordWebtoonData.setTitle("편의점 샛별이");
-            keywordWebtoonData.setSub_title("활화산&스기키 하루미");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10852_1646644078.1351.jpg");
+            webtoonData.setTitle("나홀로 초능력자");
+            webtoonData.setSub_title("GUMINGYUEYE&NAMU");
+            webtoonDataArrayList.add(webtoonData);
         } else if (btnNo == 8) {
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/5412_1580460555.8698.jpg");
-            keywordWebtoonData.setTitle("편의점 샛별이");
-            keywordWebtoonData.setSub_title("활화산&스기키 하루미");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10831_1645411113.1267.jpg");
+            webtoonData.setTitle("역천지존");
+            webtoonData.setSub_title("kuyayumu");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/2631_1550797351.4958.jpg");
-            keywordWebtoonData.setTitle("청소부K");
-            keywordWebtoonData.setSub_title("신진우&홍순식");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10828_1645411050.289.jpg");
+            webtoonData.setTitle("신무천존");
+            webtoonData.setSub_title("LEGEND ANIMATION");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/1345_1553841689.2188.jpg");
-            keywordWebtoonData.setTitle("뽈쟁이 툰");
-            keywordWebtoonData.setSub_title("뽈쟁이");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10830_1645410926.1972.jpg");
+            webtoonData.setTitle("무적검역");
+            webtoonData.setSub_title("소명태극");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10303_1559888119.0164.jpg");
-            keywordWebtoonData.setTitle("음지킹");
-            keywordWebtoonData.setSub_title("서영관");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10245_1552357810.8887.jpg");
+            webtoonData.setTitle("성무신결");
+            webtoonData.setSub_title("아이리더");
+            webtoonDataArrayList.add(webtoonData);
 
-            keywordWebtoonData = new KeywordWebtoonData();
-            keywordWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/8859_1501840279.2393.jpg");
-            keywordWebtoonData.setTitle("그녀, 윤희");
-            keywordWebtoonData.setSub_title("병수씨");
-            keywordWebtoonDataArrayList.add(keywordWebtoonData);
+            webtoonData = new WebtoonData();
+            webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10826_1645410735.9261.jpg");
+            webtoonData.setTitle("만계신주");
+            webtoonData.setSub_title("스네일");
+            webtoonDataArrayList.add(webtoonData);
         }
 
-        recommandRecycleAdapter = new KeywordRecyclerViewAdapter(keywordWebtoonDataArrayList, getContext());
+        recommandRecycleAdapter = new WebtoonRecyclerViewAdapter(webtoonDataArrayList, getContext());
         recommandRecycle.setAdapter(recommandRecycleAdapter);
+    }
+
+    public void getWaitData() {
+        webtoonDataArrayList = new ArrayList<>();
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10806_1642490978.5388.jpg");
+        webtoonData.setTitle("천일의 아내");
+        webtoonData.setSub_title("0510&베리&죠이나");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10300_1560234034.5599.jpg");
+        webtoonData.setTitle("Mad : 콜때기");
+        webtoonData.setSub_title("고영훈&김찬영");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10860_1646898197.8547.jpg");
+        webtoonData.setTitle("낮에 뜨는 별");
+        webtoonData.setSub_title("채은,고다고");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10779_1641439329.9598.jpg");
+        webtoonData.setTitle("인류멸망같은 건 상관없어");
+        webtoonData.setSub_title("김정호");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10609_1619599386.7962.jpg");
+        webtoonData.setTitle("대표님, 사모님이 도망가요");
+        webtoonData.setSub_title("Hongshu&Anyouran");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/9993_1515742630.1929.jpg");
+        webtoonData.setTitle("프릭");
+        webtoonData.setSub_title("신진우&홍순식");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10867_1647592077.2087.jpg");
+        webtoonData.setTitle("대귀갑사");
+        webtoonData.setSub_title("당가삼소&DL.Sir");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10634_1640604653.6298.jpg");
+        webtoonData.setTitle("잘못 전한 편지");
+        webtoonData.setSub_title("배뚱&생선찜");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10866_1647591657.2121.jpg");
+        webtoonData.setTitle("현질해서 최강으로 레벨업!");
+        webtoonData.setSub_title("대목&노뚠뚠, 반위");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10857_1646893667.3302.jpg");
+        webtoonData.setTitle("너와 사는 오늘");
+        webtoonData.setSub_title("우지혜,두르");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10858_1646894514.7813.jpg");
+        webtoonData.setTitle("그 남자의 계략");
+        webtoonData.setSub_title("이채영,한우주");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10859_1646896306.429.jpg");
+        webtoonData.setTitle("불순한 동거동락");
+        webtoonData.setSub_title("황한영,이룸");
+        webtoonDataArrayList.add(webtoonData);
+
+        waitRecycleAdapter = new WebtoonRecyclerViewAdapter(webtoonDataArrayList, getContext());
+        waitRecycle.setAdapter(waitRecycleAdapter);
+    }
+
+    public void getCoinData() {
+        webtoonDataArrayList = new ArrayList<>();
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10408_1572601697.2488.jpg");
+        webtoonData.setTitle("렛 미 드라이브");
+        webtoonData.setSub_title("견자");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10790_1640248556.607.jpg");
+        webtoonData.setTitle("독충마왕 벌레들의 전쟁");
+        webtoonData.setSub_title("검군");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10777_1638417070.3987.jpg");
+        webtoonData.setTitle("오해로 시작된 사이");
+        webtoonData.setSub_title("Kuaikan&QianTangTang&FangChao");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10263_1554108800.5357.jpg");
+        webtoonData.setTitle("백은아란전");
+        webtoonData.setSub_title("송정욱&송의섭");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10677_1626345325.6626.jpg");
+        webtoonData.setTitle("소년검객");
+        webtoonData.setSub_title("웹티&올코");
+        webtoonDataArrayList.add(webtoonData);
+
+        webtoonData = new WebtoonData();
+        webtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb10/10586_1614672726.6537.jpg");
+        webtoonData.setTitle("신데렐라의 역습");
+        webtoonData.setSub_title("유룩");
+        webtoonDataArrayList.add(webtoonData);
+
+        coinRecycleAdapter = new WebtoonRecyclerViewAdapter(webtoonDataArrayList, getContext());
+        coinRecycle.setAdapter(coinRecycleAdapter);
     }
 }

@@ -73,54 +73,49 @@
         android:id="@+id/btn5"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginHorizontal="2dp"
         android:layout_marginVertical="2dp"
         android:background="@drawable/mainfragment_buttonshape"
         android:gravity="center"
         android:text="무료/할인"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toStartOf="@id/btn2"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/btn1"
+        app:layout_constraintStart_toStartOf="@id/btn1"
         app:layout_constraintTop_toBottomOf="@id/btn1" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn6"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginHorizontal="2dp"
         android:background="@drawable/mainfragment_buttonshape"
         android:gravity="center"
         android:text="이벤트"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toStartOf="@id/guideline_fmain1"
-        app:layout_constraintStart_toEndOf="@id/btn1"
+        app:layout_constraintStart_toStartOf="@id/btn2"
+        app:layout_constraintEnd_toEndOf="@id/btn2"
         app:layout_constraintTop_toTopOf="@id/btn5" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn7"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginHorizontal="2dp"
         android:background="@drawable/mainfragment_buttonshape"
         android:gravity="center"
         android:text="리메이크"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toStartOf="@id/btn4"
-        app:layout_constraintStart_toEndOf="@id/guideline_fmain1"
+        app:layout_constraintEnd_toEndOf="@id/btn3"
+        app:layout_constraintStart_toStartOf="@id/btn3"
         app:layout_constraintTop_toTopOf="@id/btn5" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn8"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginHorizontal="2dp"
         android:background="@drawable/mainfragment_buttonshape"
         android:gravity="center"
         android:text="출석 체크"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn3"
+        app:layout_constraintEnd_toEndOf="@id/btn4"
+        app:layout_constraintStart_toStartOf="@id/btn4"
         app:layout_constraintTop_toTopOf="@id/btn5" />
 
     <androidx.viewpager2.widget.ViewPager2
@@ -241,8 +236,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:orientation="vertical"
         android:checkedButton="@id/rb_button1"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_keyword">
@@ -390,10 +385,9 @@
         android:id="@+id/rv_keyWord"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/rg_filter1"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rg_filter1" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_recommand"
@@ -424,8 +418,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:orientation="vertical"
         android:checkedButton="@id/rb_button1"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_recommandMore">
@@ -448,9 +442,9 @@
                 android:onClick="oneRadioButtonClicked"
                 android:paddingVertical="5dp"
                 android:text="#로맨스"
-                android:textStyle="bold"
                 android:textColor="@drawable/selector_radio_text_1"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/rb_button2_2"
@@ -464,9 +458,9 @@
                 android:onClick="oneRadioButtonClicked"
                 android:paddingVertical="5dp"
                 android:text="#드라마"
-                android:textStyle="bold"
                 android:textColor="@drawable/selector_radio_text_2"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/rb_button3_2"
@@ -480,9 +474,9 @@
                 android:onClick="oneRadioButtonClicked"
                 android:paddingVertical="5dp"
                 android:text="#학원/액션"
-                android:textStyle="bold"
                 android:textColor="@drawable/selector_radio_text_3"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/rb_button4_2"
@@ -496,9 +490,9 @@
                 android:onClick="oneRadioButtonClicked"
                 android:paddingVertical="5dp"
                 android:text="#옴니버스"
-                android:textStyle="bold"
                 android:textColor="@drawable/selector_radio_text_4"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -521,9 +515,9 @@
                 android:onClick="oneRadioButtonClicked"
                 android:paddingVertical="5dp"
                 android:text="#판타지/SF"
-                android:textStyle="bold"
                 android:textColor="@drawable/selector_radio_text_3"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/rb_button6_2"
@@ -537,9 +531,9 @@
                 android:onClick="oneRadioButtonClicked"
                 android:paddingVertical="5dp"
                 android:text="#공포/스릴러"
-                android:textStyle="bold"
                 android:textColor="@drawable/selector_radio_text_4"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/rb_button7_2"
@@ -553,9 +547,9 @@
                 android:onClick="oneRadioButtonClicked"
                 android:paddingVertical="5dp"
                 android:text="#개그"
-                android:textStyle="bold"
                 android:textColor="@drawable/selector_radio_text_2"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/rb_button8_2"
@@ -569,9 +563,9 @@
                 android:onClick="oneRadioButtonClicked"
                 android:paddingVertical="5dp"
                 android:text="#무협"
-                android:textStyle="bold"
                 android:textColor="@drawable/selector_radio_text_1"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -581,9 +575,96 @@
         android:id="@+id/rv_recommand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/rg_filter2"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rg_filter2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_recommandFree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8sp"
+        android:text="추천무료"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:translationZ="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_recommand" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_recommandFree"
+        android:layout_width="650dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/recommend_free2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_recommandFree" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_waitFree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:text="기다리면 무료"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:translationZ="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_recommandFree" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_waitFree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_waitFree" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_1coin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8sp"
+        android:text="1코인관"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:translationZ="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_waitFree" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_1coin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_1coin" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8sp"
+        android:text="이벤트관"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:translationZ="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_1coin" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp2_eventbanner"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_event" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
