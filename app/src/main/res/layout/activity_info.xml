@@ -171,14 +171,104 @@
         android:layout_width="67dp"
         android:layout_height="20dp"
         android:layout_marginEnd="5dp"
-        app:layout_constraintStart_toStartOf="@id/tv_infoSubtitle"
         android:background="@drawable/age_icon_custom"
-        app:layout_constraintTop_toBottomOf="@id/tv_infoWriter"
-        android:text="15세 이용가"
         android:gravity="center"
-        android:textSize="12sp"
+        android:text="15세 이용가"
         android:textColor="@color/white"
+        android:textSize="12sp"
         android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/tv_infoSubtitle"
+        app:layout_constraintTop_toBottomOf="@id/tv_infoWriter" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_subscriber"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/icon_subscriber"
+        app:layout_constraintStart_toStartOf="@id/tv_infoSubtitle"
+        app:layout_constraintTop_toBottomOf="@id/tv_ageIcon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_subscriber"
+        android:layout_width="36dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="4dp"
+        android:text="구독층"
+        android:textColor="#333333"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/iv_subscriber"
+        app:layout_constraintTop_toBottomOf="@id/tv_ageIcon"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="2dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_subMale"
+        android:layout_width="49.36dp"
+        android:layout_height="20dp"
+        android:background="@drawable/male_sub_text"
+        app:layout_constraintStart_toEndOf="@id/tv_subscriber"
+        app:layout_constraintTop_toBottomOf="@id/tv_ageIcon"
+        android:layout_marginTop="3dp"
+        android:text="남 50%"
+        android:textColor="#2e8de5"
+        android:textSize="12sp"
+        android:gravity="center"
         />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_subFemale"
+        android:layout_width="49.36dp"
+        android:layout_height="20dp"
+        android:background="@drawable/female_sub_text"
+        app:layout_constraintStart_toEndOf="@id/tv_subMale"
+        app:layout_constraintTop_toBottomOf="@id/tv_ageIcon"
+        android:layout_marginTop="3dp"
+        android:text="여 50%"
+        android:textColor="#e63740"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginStart="4dp"
+        />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tv_infoSubtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="10.25dp"
+        android:orientation="vertical"
+        >
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/icon_ep_bookmark"
+            android:layout_gravity="center"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="38.48dp"
+            android:layout_height="16.8dp"
+            android:text="즐겨찾기"
+            android:textSize="10sp"
+            android:textColor="#999999"
+            android:gravity="center"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/infoview_1"
+        android:layout_width="392dp"
+        android:layout_height="1dp"
+        android:background="#DDDDDD"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tv_subFemale"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
