@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_filterImage"
+        android:layout_width="160.8dp"
+        android:layout_height="160.8dp"
+        android:src="@drawable/filter_test"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_filterImageTitle"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/iv_filterImage"
+        app:layout_constraintTop_toBottomOf="@id/iv_filterImage"
+        android:text="사각사각 로맨스"
+        android:textSize="12.8sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:maxLines="1"
+        android:ellipsize="end"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_filterImageSubTitle"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/iv_filterImage"
+        app:layout_constraintTop_toBottomOf="@id/tv_filterImageTitle"
+        android:text="말초코칩"
+        android:textSize="11.2sp"
+        android:textStyle="bold"
+        android:textColor="#666666"
+        android:maxLines="1"
+        android:ellipsize="end"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

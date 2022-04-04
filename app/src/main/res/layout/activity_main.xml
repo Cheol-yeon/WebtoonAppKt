@@ -304,7 +304,6 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
                     android:text="서울시 강남구 테헤란로 509 엔씨타워 9층"
                     android:textColor="#7C8084"
                     android:textSize="11sp"
@@ -313,7 +312,6 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
                     android:text="사업자등록번호:113-86-80702 대표자 : 유정석"
                     android:textColor="#7C8084"
                     android:textSize="11sp"
@@ -322,7 +320,6 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
                     android:text="통신판매업신고:제2019-서울강남-04615호"
                     android:textColor="#7C8084"
                     android:textSize="11sp"
@@ -331,7 +328,6 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
                     android:text="고객센터 : 1644-1531 toptoon@toptoon.com"
                     android:textColor="#7C8084"
                     android:textSize="11sp"
@@ -340,7 +336,6 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
                     android:layout_marginBottom="10dp"
                     android:text="\n 탑툰의 모든 콘텐츠는 저작권법에 의거 보호받고 있습니다."
                     android:textColor="#5f8fd5"

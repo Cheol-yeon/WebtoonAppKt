@@ -14,12 +14,12 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class WebtoonRecyclerViewAdapter extends RecyclerView.Adapter<WebtoonRecyclerViewAdapter.ViewHolder> {
+public class WebtoonRecyclerViewAdapter2 extends RecyclerView.Adapter<WebtoonRecyclerViewAdapter2.ViewHolder> {
 
     Context context;
     ArrayList<WebtoonData> webtoonDataArrayList;
 
-    public WebtoonRecyclerViewAdapter(ArrayList<WebtoonData> webtoonDataArrayList, Context context) {
+    public WebtoonRecyclerViewAdapter2(ArrayList<WebtoonData> webtoonDataArrayList, Context context) {
         this.context = context;
         this.webtoonDataArrayList = webtoonDataArrayList;
     }
@@ -39,13 +39,13 @@ public class WebtoonRecyclerViewAdapter extends RecyclerView.Adapter<WebtoonRecy
 
     @NonNull
     @Override
-    public WebtoonRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.webtoon_recyclerview_item, viewGroup, false);
-        return new WebtoonRecyclerViewAdapter.ViewHolder(view);
+    public WebtoonRecyclerViewAdapter2.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.webtoon_recyclerview_item2, viewGroup, false);
+        return new WebtoonRecyclerViewAdapter2.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull WebtoonRecyclerViewAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull WebtoonRecyclerViewAdapter2.ViewHolder holder, int position) {
         WebtoonData webtoonData = webtoonDataArrayList.get(position);
 
         Glide.with(context)

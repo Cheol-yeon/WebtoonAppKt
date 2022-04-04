@@ -9,6 +9,8 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.CompositePageTransformer;
+import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.util.Log;
@@ -48,7 +50,7 @@ public class MainFragment extends Fragment {
     ArrayList<WebtoonData> webtoonDataArrayList;
     WebtoonData webtoonData;
 
-    ViewPager2 viewPager2_banner, viewPager2_ranking;
+    ViewPager2 viewPager2_banner, viewPager2_ranking, viewPager2_event;
     private LinearLayout layoutIndicator;
     TabLayout tabLayout;
     RadioGroup radioGroupKeyword;
@@ -82,6 +84,19 @@ public class MainFragment extends Fragment {
             "https://shtosebzjw.akamaized.net/assets/upfile/banner/12549_1647229540.3236.jpg"
     };
 
+    private String[] images_event = new String[]{
+            "https://shtosebzjw.akamaized.net/assets/upfile/event_thumb/396_12161.jpg",
+            "https://shtosebzjw.akamaized.net/assets/upfile/event_thumb/162_19811.jpg",
+            "https://shtosebzjw.akamaized.net/assets/upfile/event_thumb/234_17061.png",
+            "https://shtosebzjw.akamaized.net/assets/upfile/event_thumb/340_15811.png",
+            "https://shtosebzjw.akamaized.net/assets/upfile/event_thumb/61_13501.jpg",
+            "https://shtosebzjw.akamaized.net/assets/upfile/event_thumb/94_10841.jpg",
+            "https://shtosebzjw.akamaized.net/assets/upfile/event_thumb/133_10691.jpg",
+            "https://shtosebzjw.akamaized.net/assets/upfile/event_thumb/240_13351.jpg",
+            "https://shtosebzjw.akamaized.net/assets/upfile/event_thumb/200_12861.jpg",
+            "https://shtosebzjw.akamaized.net/assets/upfile/event_thumb/395_17081.png"
+    };
+    
     public MainFragment() {
         // Required empty public constructor
     }
@@ -111,19 +126,21 @@ public class MainFragment extends Fragment {
         layoutIndicator = view.findViewById(R.id.layoutIndicators);
         viewPager2_banner = view.findViewById(R.id.vp2_banner);
         viewPager2_ranking = view.findViewById(R.id.vp2_ranking);
+        viewPager2_event = view.findViewById(R.id.vp2_eventbanner);
         tabLayout = view.findViewById(R.id.tl_ranking);
         keyWordRecycle = view.findViewById(R.id.rv_keyWord);
         recommandRecycle = view.findViewById(R.id.rv_recommand);
         waitRecycle = view.findViewById(R.id.rv_waitFree);
         coinRecycle = view.findViewById(R.id.rv_1coin);
 
-
-        // 뷰페이저2 아이템 지정
+        // 화면에 보여줄 뷰페이저2 개수
         viewPager2_banner.setOffscreenPageLimit(1);
-        viewPager2_banner.setAdapter(new BannerAdapter(this.getContext(), images));
+        viewPager2_ranking.setOffscreenPageLimit(2);
+        viewPager2_event.setOffscreenPageLimit(2);
 
-//        SpringDotsIndicator indicator = view.findViewById(R.id.layoutIndicators);
-//        indicator.setViewPager2(viewPager2_banner);
+        // viewPager2_banner
+        // 뷰페이저2 아이템 지정
+        viewPager2_banner.setAdapter(new BannerAdapter(this.getContext(), images));
 
         // 배너 이동할 때 마다 몇번째인지 알려줌
         viewPager2_banner.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -138,6 +155,27 @@ public class MainFragment extends Fragment {
         });
         setupIndicators(images.length);
 
+        // viewPager2_event
+        viewPager2_event.setAdapter(new EventAdapter(this.getContext(), images_event));
+
+        //viewPager2_ranking
+        // 뷰페이저2에서 화면 우측에 다음페이지 미리보기 표시
+        viewPager2_ranking.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
+
+        CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
+        compositePageTransformer.addTransformer(new MarginPageTransformer(40));
+        compositePageTransformer.addTransformer(new ViewPager2.PageTransformer() {
+            @Override
+            public void transformPage(@NonNull View page, float position) {
+                float r = 1 - Math.abs(position);
+//                page.setScaleY(0.85f + r * 0.15f);
+            }
+        });
+
+        viewPager2_ranking.setPageTransformer(compositePageTransformer);
+
+//        SpringDotsIndicator indicator = view.findViewById(R.id.layoutIndicators);
+//        indicator.setViewPager2(viewPager2_banner);
 
         viewPager2_ranking.setAdapter(new RankingAdapter(this.getActivity()));
         // 인기순위 탭 레이아웃과 목록 표시할 ViewPager2 연결
@@ -1057,7 +1095,7 @@ public class MainFragment extends Fragment {
         webtoonData.setSub_title("황한영,이룸");
         webtoonDataArrayList.add(webtoonData);
 
-        waitRecycleAdapter = new WebtoonRecyclerViewAdapter(webtoonDataArrayList, getContext());
+        waitRecycleAdapter = new WebtoonRecyclerViewAdapter2(webtoonDataArrayList, getContext());
         waitRecycle.setAdapter(waitRecycleAdapter);
     }
 
@@ -1100,7 +1138,7 @@ public class MainFragment extends Fragment {
         webtoonData.setSub_title("유룩");
         webtoonDataArrayList.add(webtoonData);
 
-        coinRecycleAdapter = new WebtoonRecyclerViewAdapter(webtoonDataArrayList, getContext());
+        coinRecycleAdapter = new WebtoonRecyclerViewAdapter2(webtoonDataArrayList, getContext());
         coinRecycle.setAdapter(coinRecycleAdapter);
     }
 }
