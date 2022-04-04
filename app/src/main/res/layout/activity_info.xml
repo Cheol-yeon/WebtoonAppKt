@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_back"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="2dp"
+        android:src="@drawable/icon_sub_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_infoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="9dp"
+        android:text="편의점 샛별이"
+        android:textColor="#E63740"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/iv_back"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_infoHome"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginHorizontal="12dp"
+        android:src="@drawable/icon_sub_home"
+        app:layout_constraintEnd_toStartOf="@id/iv_infoGiftbox"
+        app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_infoGiftbox"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginHorizontal="12dp"
+        android:src="@drawable/icon_giftbox"
+        app:layout_constraintEnd_toStartOf="@id/iv_infoHeadmenu"
+        app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_infoHeadmenu"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/icon_headmenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_infoSign"
+        android:layout_width="412dp"
+        android:layout_height="222.47dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/info_sign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_infoTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_infoSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="편의점 샛별이"
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_infoSign" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_badge1"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="25dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/new20_badge_exclusive"
+        app:layout_constraintStart_toEndOf="@id/tv_infoSubtitle"
+        app:layout_constraintTop_toBottomOf="@id/iv_infoSign" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_badge2"
+        android:layout_width="34dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="25dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/new22_badge_nonstop"
+        app:layout_constraintStart_toEndOf="@id/iv_badge1"
+        app:layout_constraintTop_toBottomOf="@id/iv_infoSign" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_infoWriter"
+        android:layout_width="115.89dp"
+        android:layout_height="21dp"
+        android:gravity="center"
+        android:text="활화산&amp;스기키 하루미"
+        android:textColor="#666666"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/tv_infoSubtitle"
+        app:layout_constraintTop_toBottomOf="@id/tv_infoSubtitle" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="10dp"
+        android:background="#DDDDDD"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/tv_infoWriter"
+        app:layout_constraintStart_toEndOf="@id/tv_infoWriter"
+        app:layout_constraintTop_toTopOf="@id/tv_infoWriter" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_infoSubscribe"
+        android:layout_width="108.13dp"
+        android:layout_height="21dp"
+        android:gravity="center"
+        android:text="구독수 58,030,000+"
+        android:textColor="#3AB4C0"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/tv_infoWriter"
+        app:layout_constraintTop_toBottomOf="@id/tv_infoSubtitle" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="10dp"
+        android:background="#DDDDDD"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/tv_infoSubscribe"
+        app:layout_constraintStart_toEndOf="@id/tv_infoSubscribe"
+        app:layout_constraintTop_toTopOf="@id/tv_infoSubscribe" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_infoGrade"
+        android:layout_width="34.66dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="3dp"
+        android:drawableStart="@drawable/resize_star"
+        android:gravity="center"
+        android:paddingTop="2dp"
+        android:text="9.3"
+        android:textColor="#E63740"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/tv_infoSubscribe"
+        app:layout_constraintTop_toBottomOf="@id/tv_infoSubtitle" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="10dp"
+        android:background="#DDDDDD"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/tv_infoGrade"
+        app:layout_constraintStart_toEndOf="@id/tv_infoGrade"
+        app:layout_constraintTop_toTopOf="@id/tv_infoGrade" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_ageIcon"
+        android:layout_width="67dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintStart_toStartOf="@id/tv_infoSubtitle"
+        android:background="@drawable/age_icon_custom"
+        app:layout_constraintTop_toBottomOf="@id/tv_infoWriter"
+        android:text="15세 이용가"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

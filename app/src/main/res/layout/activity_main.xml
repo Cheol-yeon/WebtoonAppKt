@@ -61,7 +61,8 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginTop="2dp">
 
                     <androidx.constraintlayout.utils.widget.ImageFilterView
                         android:layout_width="20dp"
@@ -95,7 +96,8 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginTop="2dp">
 
                     <androidx.constraintlayout.utils.widget.ImageFilterView
                         android:layout_width="20dp"
@@ -129,7 +131,8 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginTop="2dp">
 
                     <androidx.constraintlayout.utils.widget.ImageFilterView
                         android:layout_width="20dp"
@@ -164,7 +167,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginTop="2dp">
 
                     <androidx.constraintlayout.utils.widget.ImageFilterView
                         android:layout_width="20dp"
@@ -199,7 +203,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginTop="2dp">
 
                     <androidx.constraintlayout.utils.widget.ImageFilterView
                         android:layout_width="20dp"
