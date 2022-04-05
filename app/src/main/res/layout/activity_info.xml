@@ -5,406 +5,535 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/iv_back"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="2dp"
-        android:src="@drawable/icon_sub_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_infoTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="9dp"
-        android:text="편의점 샛별이"
-        android:textColor="#E63740"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/iv_back"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/iv_infoHome"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginHorizontal="12dp"
-        android:src="@drawable/icon_sub_home"
-        app:layout_constraintEnd_toStartOf="@id/iv_infoGiftbox"
-        app:layout_constraintTop_toTopOf="@id/iv_back" />
-
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/iv_infoGiftbox"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginHorizontal="12dp"
-        android:src="@drawable/icon_giftbox"
-        app:layout_constraintEnd_toStartOf="@id/iv_infoHeadmenu"
-        app:layout_constraintTop_toTopOf="@id/iv_back" />
-
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/iv_infoHeadmenu"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginEnd="10dp"
-        android:src="@drawable/icon_headmenu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/iv_back" />
-
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/iv_infoSign"
-        android:layout_width="412dp"
-        android:layout_height="222.47dp"
-        android:layout_marginTop="10dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/info_sign"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_infoTitle" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_infoSubtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="28dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:text="편의점 샛별이"
-        android:textColor="@color/black"
-        android:textSize="19sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_infoSign" />
-
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/iv_badge1"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="25dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/new20_badge_exclusive"
-        app:layout_constraintStart_toEndOf="@id/tv_infoSubtitle"
-        app:layout_constraintTop_toBottomOf="@id/iv_infoSign" />
-
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/iv_badge2"
-        android:layout_width="34dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="25dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/new22_badge_nonstop"
-        app:layout_constraintStart_toEndOf="@id/iv_badge1"
-        app:layout_constraintTop_toBottomOf="@id/iv_infoSign" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_infoWriter"
-        android:layout_width="115.89dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="10dp"
-        android:gravity="center"
-        android:text="활화산&amp;스기키 하루미"
-        android:textColor="#666666"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_infoSubtitle" />
-
-    <View
-        android:layout_width="1dp"
-        android:layout_height="10dp"
-        android:background="#DDDDDD"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@id/tv_infoWriter"
-        app:layout_constraintStart_toEndOf="@id/tv_infoWriter"
-        app:layout_constraintTop_toTopOf="@id/tv_infoWriter" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_infoSubscribe"
-        android:layout_width="108.13dp"
-        android:layout_height="21dp"
-        android:gravity="center"
-        android:text="구독수 58,030,000+"
-        android:textColor="#3AB4C0"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@id/tv_infoWriter"
-        app:layout_constraintTop_toBottomOf="@id/tv_infoSubtitle" />
-
-    <View
-        android:layout_width="1dp"
-        android:layout_height="10dp"
-        android:background="#DDDDDD"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@id/tv_infoSubscribe"
-        app:layout_constraintStart_toEndOf="@id/tv_infoSubscribe"
-        app:layout_constraintTop_toTopOf="@id/tv_infoSubscribe" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_infoGrade"
-        android:layout_width="34.66dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="3dp"
-        android:drawableStart="@drawable/resize_star"
-        android:gravity="center"
-        android:paddingTop="2dp"
-        android:text="9.3"
-        android:textColor="#E63740"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@id/tv_infoSubscribe"
-        app:layout_constraintTop_toBottomOf="@id/tv_infoSubtitle" />
-
-    <View
-        android:layout_width="1dp"
-        android:layout_height="10dp"
-        android:background="#DDDDDD"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@id/tv_infoGrade"
-        app:layout_constraintStart_toEndOf="@id/tv_infoGrade"
-        app:layout_constraintTop_toTopOf="@id/tv_infoGrade" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_ageIcon"
-        android:layout_width="67dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/age_icon_custom"
-        android:gravity="center"
-        android:text="15세 이용가"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/tv_infoSubtitle"
-        app:layout_constraintTop_toBottomOf="@id/tv_infoWriter" />
-
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/iv_subscriber"
-        android:layout_width="12dp"
-        android:layout_height="12dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/icon_subscriber"
-        app:layout_constraintStart_toStartOf="@id/tv_infoSubtitle"
-        app:layout_constraintTop_toBottomOf="@id/tv_ageIcon" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_subscriber"
-        android:layout_width="36dp"
-        android:layout_height="18dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:text="구독층"
-        android:textColor="#333333"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@id/iv_subscriber"
-        app:layout_constraintTop_toBottomOf="@id/tv_ageIcon" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_subMale"
-        android:layout_width="49.36dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/male_sub_text"
-        android:gravity="center"
-        android:text="남 50%"
-        android:textColor="#2e8de5"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@id/tv_subscriber"
-        app:layout_constraintTop_toBottomOf="@id/tv_ageIcon" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_subFemale"
-        android:layout_width="49.36dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/female_sub_text"
-        android:gravity="center"
-        android:text="여 50%"
-        android:textColor="#e63740"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@id/tv_subMale"
-        app:layout_constraintTop_toBottomOf="@id/tv_ageIcon" />
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10.25dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tv_infoSubtitle">
-
-        <androidx.constraintlayout.utils.widget.ImageFilterView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_gravity="center"
-            android:src="@drawable/icon_ep_bookmark" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="38.48dp"
-            android:layout_height="16.8dp"
-            android:gravity="center"
-            android:text="즐겨찾기"
-            android:textColor="#999999"
-            android:textSize="10sp" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <View
-        android:id="@+id/infoview_1"
-        android:layout_width="392dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="8dp"
-        android:background="#DDDDDD"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_subFemale" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_synop"
-        android:layout_width="392dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="8dp"
-        android:ellipsize="end"
-        android:maxLines="5"
-        android:text=" 4년전 골목에서 만난 위험한 여고생이 우리 편의점에 심야알바로 들어왔다! 30대 남자점장과 스무살 여대생의 핵꿀잼 스토리!
-편의점을 운영하던 대현은 야간 알바생을 구하던 중 미모의 여대생을 면접보게 된다. 속으로는 쾌재를 불렀지만 이내 굳어지는 그의 얼굴. 그녀는 바로 4년 전, 골목에서 대현에게 담배를 사다달라던 일진 여고생 샛별이었던 것! 대현은 샛별을 뽑을지 말지 인생 최대의 고민에 휩싸이는데..."
-        android:textColor="#666666"
-        android:textSize="12.5sp"
-        app:layout_constraintEnd_toEndOf="@id/infoview_1"
-        app:layout_constraintStart_toStartOf="@id/infoview_1"
-        app:layout_constraintTop_toBottomOf="@id/infoview_1" />
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/ll_tag"
-        android:layout_width="392dp"
-        android:layout_height="17.6dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="@id/infoview_1"
-        app:layout_constraintTop_toBottomOf="@id/tv_synop">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="#알바생"
-            android:textColor="#E63740"
-            android:textSize="12sp" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="#코믹"
-            android:textColor="#E63740"
-            android:textSize="12sp" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="#일진"
-            android:textColor="#E63740"
-            android:textSize="12sp" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="#드라마"
-            android:textColor="#E63740"
-            android:textSize="12sp" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="#완결"
-            android:textColor="#E63740"
-            android:textSize="12sp" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/iv_titWriter"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="20dp"
-        android:background="#87D1F3"
-        android:src="@drawable/tit_writer"
-        app:layout_constraintEnd_toStartOf="@id/iv_titCheerup"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_tag" />
-
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/iv_titCheerup"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="20dp"
-        android:background="#FDBBB1"
-        android:src="@drawable/tit_cheerup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/iv_titWriter"
-        app:layout_constraintTop_toBottomOf="@id/ll_tag" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_allbuy"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="61.2dp"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/constlayout_custom"
-        android:paddingStart="10dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="12dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_titWriter">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.utils.widget.ImageFilterView
-            android:id="@+id/iv_allbuy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/allbuy_icon_custom"
-            android:src="@drawable/ico_ep_allbuy"
-            app:layout_constraintStart_toStartOf="@id/cl_allbuy"
-            app:layout_constraintTop_toTopOf="@id/cl_allbuy"
-            app:layout_constraintBaseline_toBaselineOf="@id/tv_allbuy1"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_allbuy1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="전체소장하면"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@id/iv_allbuy"
-            app:layout_constraintTop_toTopOf="@id/iv_allbuy"
-            app:layout_constraintBottom_toBottomOf="@id/iv_allbuy"
-            android:layout_marginStart="4dp"
-            />
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/iv_icon_back"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="2dp"
+                android:src="@drawable/icon_sub_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_allbuy2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" 20% 할인 (3,800원 할인혜택)"
-            android:textColor="#4A7DFF"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@id/tv_allbuy1"
-            app:layout_constraintTop_toTopOf="@id/iv_allbuy"
-            app:layout_constraintBottom_toBottomOf="@id/iv_allbuy"
-            android:textFontWeight="500"
-            />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_infoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="9dp"
+                android:text="편의점 샛별이"
+                android:textColor="#E63740"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_icon_back"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/iv_infoHome"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginHorizontal="12dp"
+                android:src="@drawable/icon_sub_home"
+                app:layout_constraintEnd_toStartOf="@id/iv_infoGiftbox"
+                app:layout_constraintTop_toTopOf="@id/iv_icon_back" />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/iv_infoGiftbox"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginHorizontal="12dp"
+                android:src="@drawable/icon_giftbox"
+                app:layout_constraintEnd_toStartOf="@id/iv_infoHeadmenu"
+                app:layout_constraintTop_toTopOf="@id/iv_icon_back" />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/iv_infoHeadmenu"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/icon_headmenu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_icon_back" />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/iv_infoSign"
+                android:layout_width="412dp"
+                android:layout_height="222.47dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/info_sign"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_infoTitle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_infoSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="편의점 샛별이"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_infoSign" />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/iv_badge1"
+                android:layout_width="25dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="25dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/new20_badge_exclusive"
+                app:layout_constraintStart_toEndOf="@id/tv_infoSubtitle"
+                app:layout_constraintTop_toBottomOf="@id/iv_infoSign" />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/iv_badge2"
+                android:layout_width="34dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="25dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/new22_badge_nonstop"
+                app:layout_constraintStart_toEndOf="@id/iv_badge1"
+                app:layout_constraintTop_toBottomOf="@id/iv_infoSign" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_infoWriter"
+                android:layout_width="115.89dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:text="활화산&amp;스기키 하루미"
+                android:textColor="#666666"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_infoSubtitle" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="10dp"
+                android:background="#DDDDDD"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/tv_infoWriter"
+                app:layout_constraintStart_toEndOf="@id/tv_infoWriter"
+                app:layout_constraintTop_toTopOf="@id/tv_infoWriter" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_infoSubscribe"
+                android:layout_width="108.13dp"
+                android:layout_height="21dp"
+                android:gravity="center"
+                android:text="구독수 58,030,000+"
+                android:textColor="#3AB4C0"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/tv_infoWriter"
+                app:layout_constraintTop_toBottomOf="@id/tv_infoSubtitle" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="10dp"
+                android:background="#DDDDDD"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/tv_infoSubscribe"
+                app:layout_constraintStart_toEndOf="@id/tv_infoSubscribe"
+                app:layout_constraintTop_toTopOf="@id/tv_infoSubscribe" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_infoGrade"
+                android:layout_width="34.66dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="3dp"
+                android:drawableStart="@drawable/resize_star"
+                android:gravity="center"
+                android:paddingTop="2dp"
+                android:text="9.3"
+                android:textColor="#E63740"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/tv_infoSubscribe"
+                app:layout_constraintTop_toBottomOf="@id/tv_infoSubtitle" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="10dp"
+                android:background="#DDDDDD"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/tv_infoGrade"
+                app:layout_constraintStart_toEndOf="@id/tv_infoGrade"
+                app:layout_constraintTop_toTopOf="@id/tv_infoGrade" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_ageIcon"
+                android:layout_width="67dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/age_icon_custom"
+                android:gravity="center"
+                android:text="15세 이용가"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tv_infoSubtitle"
+                app:layout_constraintTop_toBottomOf="@id/tv_infoWriter" />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/iv_subscriber"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/icon_subscriber"
+                app:layout_constraintStart_toStartOf="@id/tv_infoSubtitle"
+                app:layout_constraintTop_toBottomOf="@id/tv_ageIcon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_subscriber"
+                android:layout_width="36dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="구독층"
+                android:textColor="#333333"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/iv_subscriber"
+                app:layout_constraintTop_toBottomOf="@id/tv_ageIcon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_subMale"
+                android:layout_width="49.36dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/male_sub_text"
+                android:gravity="center"
+                android:text="남 50%"
+                android:textColor="#2e8de5"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/tv_subscriber"
+                app:layout_constraintTop_toBottomOf="@id/tv_ageIcon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_subFemale"
+                android:layout_width="49.36dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/female_sub_text"
+                android:gravity="center"
+                android:text="여 50%"
+                android:textColor="#e63740"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/tv_subMale"
+                app:layout_constraintTop_toBottomOf="@id/tv_ageIcon" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10.25dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_infoSubtitle">
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_ep_bookmark" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="38.48dp"
+                    android:layout_height="16.8dp"
+                    android:gravity="center"
+                    android:text="즐겨찾기"
+                    android:textColor="#999999"
+                    android:textSize="10sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:id="@+id/infoview_1"
+                android:layout_width="372dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="#DDDDDD"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_subFemale" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_synop"
+                android:layout_width="372dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="5"
+                android:text=" 4년전 골목에서 만난 위험한 여고생이 우리 편의점에 심야알바로 들어왔다! 30대 남자점장과 스무살 여대생의 핵꿀잼 스토리!
+편의점을 운영하던 대현은 야간 알바생을 구하던 중 미모의 여대생을 면접보게 된다. 속으로는 쾌재를 불렀지만 이내 굳어지는 그의 얼굴. 그녀는 바로 4년 전, 골목에서 대현에게 담배를 사다달라던 일진 여고생 샛별이었던 것! 대현은 샛별을 뽑을지 말지 인생 최대의 고민에 휩싸이는데..."
+                android:textColor="#666666"
+                android:textSize="12.5sp"
+                app:layout_constraintEnd_toEndOf="@id/infoview_1"
+                app:layout_constraintStart_toStartOf="@id/infoview_1"
+                app:layout_constraintTop_toBottomOf="@id/infoview_1" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_tag"
+                android:layout_width="392dp"
+                android:layout_height="17.6dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/infoview_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_synop">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="#알바생"
+                    android:textColor="#E63740"
+                    android:textSize="12sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="#코믹"
+                    android:textColor="#E63740"
+                    android:textSize="12sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="#일진"
+                    android:textColor="#E63740"
+                    android:textSize="12sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="#드라마"
+                    android:textColor="#E63740"
+                    android:textSize="12sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="#완결"
+                    android:textColor="#E63740"
+                    android:textSize="12sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/iv_titWriter"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:background="#87D1F3"
+                android:src="@drawable/tit_writer"
+                app:layout_constraintEnd_toStartOf="@id/iv_titCheerup"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_tag" />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/iv_titCheerup"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:background="#FDBBB1"
+                android:src="@drawable/tit_cheerup"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_titWriter"
+                app:layout_constraintTop_toBottomOf="@id/ll_tag" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_allbuy"
+                android:layout_width="match_parent"
+                android:layout_height="61.2dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/constlayout_custom"
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_titWriter">
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:id="@+id/iv_allbuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/allbuy_icon_custom"
+                    android:src="@drawable/ico_ep_allbuy"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_allbuy1"
+                    app:layout_constraintStart_toStartOf="@id/cl_allbuy"
+                    app:layout_constraintTop_toTopOf="@id/cl_allbuy" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_allbuy1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="전체소장하면"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_allbuy"
+                    app:layout_constraintStart_toEndOf="@id/iv_allbuy"
+                    app:layout_constraintTop_toTopOf="@id/iv_allbuy" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_allbuy2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 20% 할인 (3,800원 할인혜택)"
+                    android:textColor="#4A7DFF"
+                    android:textFontWeight="500"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_allbuy"
+                    app:layout_constraintStart_toEndOf="@id/tv_allbuy1"
+                    app:layout_constraintTop_toTopOf="@id/iv_allbuy" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_ep_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="총 67화"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tv_allbuy1"
+                    app:layout_constraintTop_toBottomOf="@id/tv_allbuy1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_org_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="3dp"
+                    android:text="94"
+                    android:textColor="#999999"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_ep_count"
+                    app:layout_constraintStart_toEndOf="@id/tv_ep_count" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_buy_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="3dp"
+                    android:text="75코인"
+                    android:textColor="#FF4A4A"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/tv_org_coin"
+                    app:layout_constraintTop_toBottomOf="@id/tv_allbuy1" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="75dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/allbuy_button_custom"
+                    android:gravity="center"
+                    android:text="전체소장"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/iv_myownbook"
+                android:layout_width="21dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ico_myownbook"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_allbuy" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_myownbook1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 전체 68화 중 "
+                android:textColor="@color/black"
+                android:textSize="12.8sp"
+                app:layout_constraintStart_toEndOf="@id/iv_myownbook"
+                app:layout_constraintTop_toTopOf="@id/iv_myownbook" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_myownbook2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 0화 보유중 "
+                android:textColor="#E63740"
+                android:textSize="12.8sp"
+                app:layout_constraintStart_toEndOf="@id/tv_myownbook1"
+                app:layout_constraintTop_toTopOf="@id/iv_myownbook" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_allign"
+                android:layout_width="72dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/allign_button_custom"
+                android:drawableStart="@drawable/resize_allign"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="정렬변경"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_allbuy" />
+
+            <View
+                android:id="@+id/infoview_2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#DDDDDD"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_allign" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_infoWebtoonlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/infoview_2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

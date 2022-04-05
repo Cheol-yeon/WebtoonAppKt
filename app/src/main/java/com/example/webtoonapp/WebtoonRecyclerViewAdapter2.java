@@ -1,6 +1,7 @@
 package com.example.webtoonapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,15 @@ public class WebtoonRecyclerViewAdapter2 extends RecyclerView.Adapter<WebtoonRec
     @Override
     public WebtoonRecyclerViewAdapter2.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.webtoon_recyclerview_item2, viewGroup, false);
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, InfoActivity.class);
+                context.startActivity(intent);
+            }
+        });
+
         return new WebtoonRecyclerViewAdapter2.ViewHolder(view);
     }
 

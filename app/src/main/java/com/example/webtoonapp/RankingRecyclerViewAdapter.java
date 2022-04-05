@@ -1,6 +1,7 @@
 package com.example.webtoonapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,7 @@ public class RankingRecyclerViewAdapter extends RecyclerView.Adapter<RankingRecy
             title = view.findViewById(R.id.tv_webtoonTitle);
             subTitle = view.findViewById(R.id.tv_webtoonSubTitle);
             hit = view.findViewById(R.id.tv_hit);
+
         }
     }
 
@@ -43,6 +45,15 @@ public class RankingRecyclerViewAdapter extends RecyclerView.Adapter<RankingRecy
     @Override
     public RankingRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.ranking_viewpager_item, viewGroup, false);
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, InfoActivity.class);
+                context.startActivity(intent);
+            }
+        });
+
         return new ViewHolder(view);
     }
 

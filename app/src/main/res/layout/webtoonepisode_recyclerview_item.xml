@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="8dp">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_thumbnail1"
+        android:layout_width="102.86dp"
+        android:layout_height="141.94dp"
+        android:background="@drawable/thumbnail_shape"
+        android:src="@drawable/thumbnail1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="fitXY"
+        />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_thumbnail2"
+        android:layout_width="102.86dp"
+        android:layout_height="141.94dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/thumbnail_shape"
+        android:src="@drawable/thumbnail2"
+        app:layout_constraintStart_toEndOf="@id/iv_thumbnail1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="fitXY" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="160.28dp"
+        android:layout_height="141.94dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/linearlayout_custom"
+        android:orientation="vertical"
+        android:paddingStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/iv_thumbnail2"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_ep_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제1화"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tv_ep_stitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_ep_stitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="첫 만남, 첫 키스(?)"
+            android:textColor="#333333"
+            android:textSize="12.8sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_ep_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ep_title"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_ep_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16.08.27"
+            android:textColor="#999999"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ep_stitle"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_free"
+            android:layout_width="50dp"
+            android:layout_height="31dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/free_button"
+            android:gravity="center"
+            android:text="무료"
+            android:textColor="#E63740"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
