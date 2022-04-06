@@ -13,11 +13,6 @@ import android.view.ViewGroup;
 
 import com.google.android.material.tabs.TabLayout;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link WeeklyFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class WeeklyFragment extends Fragment {
 
     ViewPager2 viewPager2_weekly;
