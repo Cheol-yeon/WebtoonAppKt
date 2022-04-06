@@ -4,9 +4,11 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.utils.widget.ImageFilterView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
@@ -54,6 +56,9 @@ public class MainFragment extends Fragment {
     private LinearLayout layoutIndicator;
     TabLayout tabLayout;
     RadioGroup radioGroupKeyword;
+
+    AppCompatButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
+    AppCompatButton[] btns;
 
     private RecyclerView keyWordRecycle;
     private RecyclerView.Adapter keyWordRecycleAdapter;
@@ -262,7 +267,6 @@ public class MainFragment extends Fragment {
                         this.getContext(),
                         R.drawable.bg_indicator_active
                 ));
-                Log.e("MainFrag", "Selected = " + position);
             } else {
                 imageView.setImageDrawable(ContextCompat.getDrawable(
                         this.getContext(),
@@ -277,7 +281,6 @@ public class MainFragment extends Fragment {
 
         radioGroupKeyword = view.findViewById(R.id.rg_filter1);
         int selectedId = radioGroupKeyword.getCheckedRadioButtonId();
-        Log.e("SelectedId", "test = " + selectedId);
 
         radioButtonKeyword1 = view.findViewById(R.id.rb_button1);
         radioButtonKeyword2 = view.findViewById(R.id.rb_button2);
@@ -451,7 +454,7 @@ public class MainFragment extends Fragment {
                 break;
             }
             case R.id.rb_button2_2: {
-                Log.e("onClick", "rb_button2");
+                Log.e("onClick", "rb_button2_2");
                 if (radioButtonRecommand2.isChecked() == true) {
                     radioButtonRecommand1.setChecked(false);
                     radioButtonRecommand3.setChecked(false);
@@ -465,7 +468,7 @@ public class MainFragment extends Fragment {
                 break;
             }
             case R.id.rb_button3_2: {
-                Log.e("onClick", "rb_button3");
+                Log.e("onClick", "rb_button3_2");
                 if (radioButtonRecommand3.isChecked() == true) {
                     radioButtonRecommand2.setChecked(false);
                     radioButtonRecommand1.setChecked(false);
@@ -479,7 +482,7 @@ public class MainFragment extends Fragment {
                 break;
             }
             case R.id.rb_button4_2: {
-                Log.e("onClick", "rb_button4");
+                Log.e("onClick", "rb_button4_2");
                 if (radioButtonRecommand4.isChecked() == true) {
                     radioButtonRecommand2.setChecked(false);
                     radioButtonRecommand3.setChecked(false);
@@ -493,7 +496,7 @@ public class MainFragment extends Fragment {
                 break;
             }
             case R.id.rb_button5_2: {
-                Log.e("onClick", "rb_button5");
+                Log.e("onClick", "rb_button5_2");
                 if (radioButtonRecommand5.isChecked() == true) {
                     radioButtonRecommand2.setChecked(false);
                     radioButtonRecommand3.setChecked(false);
@@ -507,7 +510,7 @@ public class MainFragment extends Fragment {
                 break;
             }
             case R.id.rb_button6_2: {
-                Log.e("onClick", "rb_button6");
+                Log.e("onClick", "rb_button6_2");
                 if (radioButtonRecommand6.isChecked() == true) {
                     radioButtonRecommand2.setChecked(false);
                     radioButtonRecommand3.setChecked(false);
@@ -521,7 +524,7 @@ public class MainFragment extends Fragment {
                 break;
             }
             case R.id.rb_button7_2: {
-                Log.e("onClick", "rb_button7");
+                Log.e("onClick", "rb_button7_2");
                 if (radioButtonRecommand7.isChecked() == true) {
                     radioButtonRecommand2.setChecked(false);
                     radioButtonRecommand3.setChecked(false);
@@ -535,7 +538,7 @@ public class MainFragment extends Fragment {
                 break;
             }
             case R.id.rb_button8_2: {
-                Log.e("onClick", "rb_button8");
+                Log.e("onClick", "rb_button8_2");
                 if (radioButtonRecommand8.isChecked() == true) {
                     radioButtonRecommand2.setChecked(false);
                     radioButtonRecommand3.setChecked(false);

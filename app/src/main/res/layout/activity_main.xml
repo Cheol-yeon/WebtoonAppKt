@@ -225,13 +225,164 @@
 
             </androidx.cardview.widget.CardView>
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_main1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_percent="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/rg_menu"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_1"
+                app:layout_goneMarginTop="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="5dp">
+
+                    <RadioButton
+                        android:id="@+id/rb_menu1"
+                        android:layout_width="97dp"
+                        android:layout_height="31dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_tab_button"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:paddingVertical="5dp"
+                        android:text="연재"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:textSize="13sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_menu2"
+                        android:layout_width="97dp"
+                        android:layout_height="31dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_tab_button"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:paddingVertical="5dp"
+                        android:text="정주행"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:textSize="13sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_menu3"
+                        android:layout_width="97dp"
+                        android:layout_height="31dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_tab_button"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:paddingVertical="5dp"
+                        android:text="TOP100"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:textSize="13sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_menu4"
+                        android:layout_width="97dp"
+                        android:layout_height="31dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_tab_button"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:paddingVertical="5dp"
+                        android:text="기다빵"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="5dp">
+
+                    <RadioButton
+                        android:id="@+id/rb_menu5"
+                        android:layout_width="97dp"
+                        android:layout_height="31dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_tab_button"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:paddingVertical="5dp"
+                        android:text="무료/할인"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:textSize="13sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_menu6"
+                        android:layout_width="97dp"
+                        android:layout_height="31dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_tab_button"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:paddingVertical="5dp"
+                        android:text="이벤트"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:textSize="13sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_menu7"
+                        android:layout_width="97dp"
+                        android:layout_height="31dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_tab_button"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:paddingVertical="5dp"
+                        android:text="리메이크"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:textSize="13sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_menu8"
+                        android:layout_width="97dp"
+                        android:layout_height="31dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/menu_tab_button"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:paddingVertical="5dp"
+                        android:text="출석 체크"
+                        android:textColor="@drawable/selector_radio_text"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </RadioGroup>
+
             <FrameLayout
                 android:id="@+id/fl_main"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/view_1" />
+                app:layout_constraintTop_toBottomOf="@id/rg_menu" />
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/iv_footer"
