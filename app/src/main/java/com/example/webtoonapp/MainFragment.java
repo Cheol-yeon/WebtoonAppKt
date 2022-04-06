@@ -57,9 +57,6 @@ public class MainFragment extends Fragment {
     TabLayout tabLayout;
     RadioGroup radioGroupKeyword;
 
-    AppCompatButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
-    AppCompatButton[] btns;
-
     private RecyclerView keyWordRecycle;
     private RecyclerView.Adapter keyWordRecycleAdapter;
     private RecyclerView.LayoutManager keyWordRecycleLayoutManager;
