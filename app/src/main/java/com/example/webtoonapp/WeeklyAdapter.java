@@ -20,28 +20,28 @@ public class WeeklyAdapter extends FragmentStateAdapter {
         // 선택 된 탭에따른 값을 프래그먼트에 전달하여 알맞은 웹툰 정보 불러오기
         switch (position) {
             case 0 : {
-                return RankingFragment.newInstance("Mon");
+                return WeeklyRecycleFragment.newInstance("Mon");
             }
             case 1 : {
-                return RankingFragment.newInstance("Thu");
+                return WeeklyRecycleFragment.newInstance("Thu");
             }
             case 2 : {
-                return RankingFragment.newInstance("Wed");
+                return WeeklyRecycleFragment.newInstance("Wed");
             }
             case 3 : {
-                return RankingFragment.newInstance("Thur");
+                return WeeklyRecycleFragment.newInstance("Thur");
             }
             case 4 : {
-                return RankingFragment.newInstance("Fri");
+                return WeeklyRecycleFragment.newInstance("Fri");
             }
             case 5 : {
-                return RankingFragment.newInstance("Sat");
+                return WeeklyRecycleFragment.newInstance("Sat");
             }
             case 6 : {
-                return RankingFragment.newInstance("Sun");
+                return WeeklyRecycleFragment.newInstance("Sun");
             }
             case 7 : {
-                return RankingFragment.newInstance("Remake");
+                return WeeklyRecycleFragment.newInstance("Remake");
             }
         }
 
