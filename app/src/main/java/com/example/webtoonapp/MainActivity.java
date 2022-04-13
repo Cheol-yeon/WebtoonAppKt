@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     MainFragment mainFragment;
     WeeklyFragment weeklyFragment;
-    CompleteFragment completeFragment;
+    LatestFragment latestFragment;
 
     FragmentTransaction transaction;
 
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         mainFragment = new MainFragment();
         weeklyFragment = new WeeklyFragment();
-        completeFragment = new CompleteFragment();
+        latestFragment = new LatestFragment();
 
         transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(binding.flMain.getId(), mainFragment);
@@ -39,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
 
         binding.rbMenu1.setOnClickListener(this::onClick);
         binding.rbMenu2.setOnClickListener(this::onClick);
+        binding.rbMenu3.setOnClickListener(this::onClick);
+        binding.rbMenu4.setOnClickListener(this::onClick);
+        binding.rbMenu5.setOnClickListener(this::onClick);
+        binding.rbMenu6.setOnClickListener(this::onClick);
+        binding.rbMenu7.setOnClickListener(this::onClick);
+        binding.rbMenu8.setOnClickListener(this::onClick);
 
     }
 
@@ -81,11 +87,87 @@ public class MainActivity extends AppCompatActivity {
                 binding.rbMenu6.setChecked(false);
                 binding.rbMenu7.setChecked(false);
                 binding.rbMenu8.setChecked(false);
-                transaction.replace(binding.flMain.getId(), completeFragment);
+                transaction.replace(binding.flMain.getId(), latestFragment);
                 transaction.commit();
             }
-
-
+        } else if (view.getId() == binding.rbMenu3.getId()) {
+            transaction = getSupportFragmentManager().beginTransaction();
+            if (binding.rbMenu3.isChecked() == true) {
+                binding.rbMenu1.setChecked(false);
+                binding.rbMenu2.setChecked(false);
+                binding.rbMenu4.setChecked(false);
+                binding.rbMenu5.setChecked(false);
+                binding.rbMenu6.setChecked(false);
+                binding.rbMenu7.setChecked(false);
+                binding.rbMenu8.setChecked(false);
+                transaction.replace(binding.flMain.getId(), latestFragment);
+                transaction.commit();
+            }
+        } else if (view.getId() == binding.rbMenu4.getId()) {
+            transaction = getSupportFragmentManager().beginTransaction();
+            if (binding.rbMenu4.isChecked() == true) {
+                binding.rbMenu1.setChecked(false);
+                binding.rbMenu3.setChecked(false);
+                binding.rbMenu2.setChecked(false);
+                binding.rbMenu5.setChecked(false);
+                binding.rbMenu6.setChecked(false);
+                binding.rbMenu7.setChecked(false);
+                binding.rbMenu8.setChecked(false);
+                transaction.replace(binding.flMain.getId(), latestFragment);
+                transaction.commit();
+            }
+        } else if (view.getId() == binding.rbMenu5.getId()) {
+            transaction = getSupportFragmentManager().beginTransaction();
+            if (binding.rbMenu5.isChecked() == true) {
+                binding.rbMenu1.setChecked(false);
+                binding.rbMenu3.setChecked(false);
+                binding.rbMenu4.setChecked(false);
+                binding.rbMenu2.setChecked(false);
+                binding.rbMenu6.setChecked(false);
+                binding.rbMenu7.setChecked(false);
+                binding.rbMenu8.setChecked(false);
+                transaction.replace(binding.flMain.getId(), latestFragment);
+                transaction.commit();
+            }
+        } else if (view.getId() == binding.rbMenu6.getId()) {
+            transaction = getSupportFragmentManager().beginTransaction();
+            if (binding.rbMenu6.isChecked() == true) {
+                binding.rbMenu1.setChecked(false);
+                binding.rbMenu3.setChecked(false);
+                binding.rbMenu4.setChecked(false);
+                binding.rbMenu5.setChecked(false);
+                binding.rbMenu2.setChecked(false);
+                binding.rbMenu7.setChecked(false);
+                binding.rbMenu8.setChecked(false);
+                transaction.replace(binding.flMain.getId(), latestFragment);
+                transaction.commit();
+            }
+        } else if (view.getId() == binding.rbMenu7.getId()) {
+            transaction = getSupportFragmentManager().beginTransaction();
+            if (binding.rbMenu7.isChecked() == true) {
+                binding.rbMenu1.setChecked(false);
+                binding.rbMenu3.setChecked(false);
+                binding.rbMenu4.setChecked(false);
+                binding.rbMenu5.setChecked(false);
+                binding.rbMenu6.setChecked(false);
+                binding.rbMenu2.setChecked(false);
+                binding.rbMenu8.setChecked(false);
+                transaction.replace(binding.flMain.getId(), latestFragment);
+                transaction.commit();
+            }
+        } else if (view.getId() == binding.rbMenu8.getId()) {
+            transaction = getSupportFragmentManager().beginTransaction();
+            if (binding.rbMenu8.isChecked() == true) {
+                binding.rbMenu1.setChecked(false);
+                binding.rbMenu3.setChecked(false);
+                binding.rbMenu4.setChecked(false);
+                binding.rbMenu5.setChecked(false);
+                binding.rbMenu6.setChecked(false);
+                binding.rbMenu7.setChecked(false);
+                binding.rbMenu2.setChecked(false);
+                transaction.replace(binding.flMain.getId(), latestFragment);
+                transaction.commit();
+            }
         }
     }
 }

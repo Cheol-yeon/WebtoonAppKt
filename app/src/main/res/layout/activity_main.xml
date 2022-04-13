@@ -274,7 +274,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:paddingVertical="5dp"
-                        android:text="정주행"
+                        android:text="신작"
                         android:textColor="@drawable/selector_radio_text"
                         android:textSize="13sp" />
 
@@ -288,7 +288,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:paddingVertical="5dp"
-                        android:text="TOP100"
+                        android:text="정주행"
                         android:textColor="@drawable/selector_radio_text"
                         android:textSize="13sp" />
 
@@ -302,7 +302,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:paddingVertical="5dp"
-                        android:text="기다빵"
+                        android:text="TOP100"
                         android:textColor="@drawable/selector_radio_text"
                         android:textSize="13sp" />
 
@@ -325,7 +325,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:paddingVertical="5dp"
-                        android:text="무료/할인"
+                        android:text="기다빵"
                         android:textColor="@drawable/selector_radio_text"
                         android:textSize="13sp" />
 
@@ -339,7 +339,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:paddingVertical="5dp"
-                        android:text="이벤트"
+                        android:text="무료/할인"
                         android:textColor="@drawable/selector_radio_text"
                         android:textSize="13sp" />
 
@@ -353,7 +353,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:paddingVertical="5dp"
-                        android:text="리메이크"
+                        android:text="이벤트"
                         android:textColor="@drawable/selector_radio_text"
                         android:textSize="13sp" />
 

@@ -23,11 +23,10 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp2_weekly"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tl_weekly"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/black"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

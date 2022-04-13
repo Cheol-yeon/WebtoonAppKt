@@ -15,6 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:scaleType="fitXY"
+        android:clipToOutline="true"
         />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
@@ -26,7 +27,8 @@
         android:src="@drawable/thumbnail2"
         app:layout_constraintStart_toEndOf="@id/iv_thumbnail1"
         app:layout_constraintTop_toTopOf="@id/iv_thumbnail1"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY"
+        android:clipToOutline="true"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_episode"

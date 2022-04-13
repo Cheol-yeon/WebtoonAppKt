@@ -15,6 +15,9 @@ import android.widget.LinearLayout;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class WeeklyFragment extends Fragment {
 
     ViewPager2 viewPager2_weekly;
@@ -84,5 +87,57 @@ public class WeeklyFragment extends Fragment {
 
         }).attach();
 
+        getDayOfWeek();
+
+    }
+
+    public void getDayOfWeek() {
+        long now = System.currentTimeMillis(); //현재시간 가져오기
+        Date date = new Date(now); //Date형식으로 Convert
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+
+        int dayWeek = cal.get(Calendar.DAY_OF_WEEK);
+        String str_week = "";
+
+        switch (dayWeek) {
+            case 1:
+                str_week = "일";
+                tabLayout.getTabAt(6).select();
+                viewPager2_weekly.setCurrentItem(6, true);
+                break;
+            case 2:
+                str_week = "월";
+                tabLayout.getTabAt(0).select();
+                viewPager2_weekly.setCurrentItem(0, true);
+                break;
+            case 3:
+                str_week = "화";
+                tabLayout.getTabAt(1).select();
+                viewPager2_weekly.setCurrentItem(1, true);
+                break;
+            case 4:
+                str_week = "수";
+                tabLayout.getTabAt(2).select();
+                viewPager2_weekly.setCurrentItem(2, true);
+                break;
+            case 5:
+                str_week = "목";
+                tabLayout.getTabAt(3).select();
+                viewPager2_weekly.setCurrentItem(3, true);
+                break;
+            case 6:
+                str_week = "금";
+                tabLayout.getTabAt(4).select();
+                viewPager2_weekly.setCurrentItem(4, true);
+                break;
+            case 7:
+                str_week = "토";
+                tabLayout.getTabAt(5).select();
+                viewPager2_weekly.setCurrentItem(5, true);
+                break;
+
+        }
     }
 }
