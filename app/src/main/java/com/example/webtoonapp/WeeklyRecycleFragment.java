@@ -72,7 +72,7 @@ public class WeeklyRecycleFragment extends Fragment {
 
     public void setWeeklyData() {
         weeklyWebtoonDatas = new ArrayList<>();
-        if(mParam1 == "Mon" || mParam1 == "Thur" || mParam1 == "Wed" || mParam1 == "Fri" || mParam1 == "Sat" || mParam1 == "Sun" || mParam1 == "Remake") {
+        if(mParam1 == "Mon" || mParam1 == "Thur" || mParam1 == "Fri" || mParam1 == "Sat" || mParam1 == "Sun" || mParam1 == "Remake") {
             weeklyWebtoonData = new WeeklyWebtoonData();
             weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10608_1620036312.6485.jpg");
             weeklyWebtoonData.setTitle("대표님의 삐뚤어진 사랑");
@@ -477,7 +477,7 @@ public class WeeklyRecycleFragment extends Fragment {
             weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/586_1525335381.3884.jpg");
             weeklyWebtoonData.setTitle("캠핑은 빡세");
             weeklyWebtoonData.setSubTitle("제154화 최종화");
-            weeklyWebtoonData.setHit("114aks");
+            weeklyWebtoonData.setHit("114만");
             weeklyWebtoonDatas.add(weeklyWebtoonData);
 
             weeklyWebtoonData = new WeeklyWebtoonData();
@@ -541,6 +541,259 @@ public class WeeklyRecycleFragment extends Fragment {
             weeklyWebtoonData.setTitle("귀연");
             weeklyWebtoonData.setSubTitle("제48화 최종화");
             weeklyWebtoonData.setHit("1.0만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+        } else if (mParam1 == "Wed") {
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10850_1646644683.0066.jpg");
+            weeklyWebtoonData.setTitle("전설 헌터로 키워지는 중입니다");
+            weeklyWebtoonData.setSubTitle("제33화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10568_1604900784.8934.jpg");
+            weeklyWebtoonData.setTitle("속도위반 대표님과 계약 아내");
+            weeklyWebtoonData.setSubTitle("제414화");
+            weeklyWebtoonData.setHit("96만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10872_1649397595.3984.jpg");
+            weeklyWebtoonData.setTitle("마황의 귀환");
+            weeklyWebtoonData.setSubTitle("제251화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10887_1648806006.937.jpg");
+            weeklyWebtoonData.setTitle("가출천사 육성계약");
+            weeklyWebtoonData.setSubTitle("제34화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10873_1649743138.8721.jpg");
+            weeklyWebtoonData.setTitle("의천도룡기");
+            weeklyWebtoonData.setSubTitle("제141화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10859_1646896306.4326.jpg");
+            weeklyWebtoonData.setTitle("불순한 동거동락");
+            weeklyWebtoonData.setSubTitle("제80화 최종화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10828_1645411050.302.jpg");
+            weeklyWebtoonData.setTitle("신무천존");
+            weeklyWebtoonData.setSubTitle("제138화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10899_1649844820.5237.jpg");
+            weeklyWebtoonData.setTitle("보지마, 안 괜찮아, 불법이야!");
+            weeklyWebtoonData.setSubTitle("제1화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10886_1648805268.204.jpg");
+            weeklyWebtoonData.setTitle("커피여우 김삼월");
+            weeklyWebtoonData.setSubTitle("제16화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10532_1596439274.2237.jpg");
+            weeklyWebtoonData.setTitle("대표님 책임지세요");
+            weeklyWebtoonData.setSubTitle("제211화");
+            weeklyWebtoonData.setHit("29만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10830_1645410926.2109.jpg");
+            weeklyWebtoonData.setTitle("무적검역");
+            weeklyWebtoonData.setSubTitle("제95화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10245_1552357810.9013.jpg");
+            weeklyWebtoonData.setTitle("성무신결");
+            weeklyWebtoonData.setSubTitle("제515화");
+            weeklyWebtoonData.setHit("7.1만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10699_1628156242.5851.jpg");
+            weeklyWebtoonData.setTitle("대표님은 나 아니면 안돼요");
+            weeklyWebtoonData.setSubTitle("제114화");
+            weeklyWebtoonData.setHit("3.8만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10847_1646971047.4652.jpg");
+            weeklyWebtoonData.setTitle("신혼좀비");
+            weeklyWebtoonData.setSubTitle("제32화");
+            weeklyWebtoonData.setHit("3.1만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10330_1638840498.5224.jpg");
+            weeklyWebtoonData.setTitle("만고검신");
+            weeklyWebtoonData.setSubTitle("시즌2 제22화");
+            weeklyWebtoonData.setHit("3.6만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10700_1628156050.969.jpg");
+            weeklyWebtoonData.setTitle("대표님의 독점적 사랑");
+            weeklyWebtoonData.setSubTitle("제114화");
+            weeklyWebtoonData.setHit("5.4만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10634_1640604653.6457.jpg");
+            weeklyWebtoonData.setTitle("잘못 전한 편지");
+            weeklyWebtoonData.setSubTitle("제18화 최종화");
+            weeklyWebtoonData.setHit("1.7만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10449_1580197487.7602.jpg");
+            weeklyWebtoonData.setTitle("대표님 꼭 안아주세요");
+            weeklyWebtoonData.setSubTitle("제238화");
+            weeklyWebtoonData.setHit("84만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10795_1641173153.1999.jpg");
+            weeklyWebtoonData.setTitle("주인님의 예비신부로 환생했습니다");
+            weeklyWebtoonData.setSubTitle("제59화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10785_1638926112.7979.jpg");
+            weeklyWebtoonData.setTitle("내 남편은 뱀파이어");
+            weeklyWebtoonData.setSubTitle("제71화");
+            weeklyWebtoonData.setHit("1.7만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10610_1620039770.1825.jpg");
+            weeklyWebtoonData.setTitle("사랑의 형태: 마음이 향하는 곳");
+            weeklyWebtoonData.setSubTitle("제95화 (시즌2)");
+            weeklyWebtoonData.setHit("2.4만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10609_1619599386.8101.jpg");
+            weeklyWebtoonData.setTitle("대표님, 사모님이 도망가요");
+            weeklyWebtoonData.setSubTitle("제289화 최종화");
+            weeklyWebtoonData.setHit("49만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10790_1640252848.2317.jpg");
+            weeklyWebtoonData.setTitle("독충마왕 벌레들의 전쟁");
+            weeklyWebtoonData.setSubTitle("제32화 최종화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10794_1641172764.1986.jpg");
+            weeklyWebtoonData.setTitle("원래 악녀가 체질");
+            weeklyWebtoonData.setSubTitle("제59화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10784_1638925951.9581.jpg");
+            weeklyWebtoonData.setTitle("대표님의 전속 노예가 되었습니다");
+            weeklyWebtoonData.setSubTitle("제71화");
+            weeklyWebtoonData.setHit("2.2만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10815_1644219619.8302.jpg");
+            weeklyWebtoonData.setTitle("폭군의 눈물");
+            weeklyWebtoonData.setSubTitle("제49화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/9811_1525334172.5868.jpg");
+            weeklyWebtoonData.setTitle("일인지하");
+            weeklyWebtoonData.setSubTitle("제416화 최종화");
+            weeklyWebtoonData.setHit("23만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10812_1644222273.2999.jpg");
+            weeklyWebtoonData.setTitle("연애 2분의 1");
+            weeklyWebtoonData.setSubTitle("제112화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10855_1646962607.1397.jpg");
+            weeklyWebtoonData.setTitle("모쉬의 슬기로운 먹는생활");
+            weeklyWebtoonData.setSubTitle("제2화 최종화");
+            weeklyWebtoonData.setHit("5천");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10586_1614672726.6737.jpg");
+            weeklyWebtoonData.setTitle("신데렐라의 역습");
+            weeklyWebtoonData.setSubTitle("시즌1 최종화");
+            weeklyWebtoonData.setHit("6.6만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/9605_1549011676.0995.jpg");
+            weeklyWebtoonData.setTitle("상큼하지 않아");
+            weeklyWebtoonData.setSubTitle("제102화 최종화");
+            weeklyWebtoonData.setHit("80만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10415_1582094039.3946.jpg");
+            weeklyWebtoonData.setTitle("H-mate");
+            weeklyWebtoonData.setSubTitle("제75화 최종화");
+            weeklyWebtoonData.setHit("47만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10125_1554963604.3303.gif");
+            weeklyWebtoonData.setTitle("대표님 안돼요");
+            weeklyWebtoonData.setSubTitle("제170화 최종화");
+            weeklyWebtoonData.setHit("81만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10395_1571044275.0403.jpg");
+            weeklyWebtoonData.setTitle("에이스");
+            weeklyWebtoonData.setSubTitle("시즌2 제36화 최종화");
+            weeklyWebtoonData.setHit("9.5만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10273_1556243522.5508.jpg");
+            weeklyWebtoonData.setTitle("내 부인은 16살");
+            weeklyWebtoonData.setSubTitle("제206화 최종화");
+            weeklyWebtoonData.setHit("18만");
+            weeklyWebtoonDatas.add(weeklyWebtoonData);
+
+            weeklyWebtoonData = new WeeklyWebtoonData();
+            weeklyWebtoonData.setImg("https://shtosebzjw.akamaized.net/assets/upfile/co_thumb12/10301_1558422314.5707.jpg");
+            weeklyWebtoonData.setTitle("이방인");
+            weeklyWebtoonData.setSubTitle("제53화 최종화");
+            weeklyWebtoonData.setHit("5.4만");
             weeklyWebtoonDatas.add(weeklyWebtoonData);
 
         }
