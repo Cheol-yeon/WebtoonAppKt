@@ -1,73 +1,55 @@
-package com.example.webtoonapp;
+package com.example.webtoonapp
 
-import android.content.Context;
-import android.content.Intent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.content.Context
+import com.example.webtoonapp.WebtoonData
+import androidx.recyclerview.widget.RecyclerView
+import androidx.constraintlayout.utils.widget.ImageFilterView
+import android.widget.TextView
+import com.example.webtoonapp.R
+import android.view.ViewGroup
+import android.view.LayoutInflater
+import android.content.Intent
+import android.view.View
+import com.example.webtoonapp.InfoActivity
+import com.bumptech.glide.Glide
+import java.util.ArrayList
 
-import androidx.annotation.NonNull;
-import androidx.constraintlayout.utils.widget.ImageFilterView;
-import androidx.recyclerview.widget.RecyclerView;
+class WebtoonRecyclerViewAdapter(
+    var webtoonDataArrayList: ArrayList<WebtoonData>?,
+    var context: Context
+) : RecyclerView.Adapter<WebtoonRecyclerViewAdapter.ViewHolder>() {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val sign: ImageFilterView
+        val title: TextView
+        val subTitle: TextView
 
-import com.bumptech.glide.Glide;
-
-import java.util.ArrayList;
-
-public class WebtoonRecyclerViewAdapter extends RecyclerView.Adapter<WebtoonRecyclerViewAdapter.ViewHolder> {
-
-    Context context;
-    ArrayList<WebtoonData> webtoonDataArrayList;
-
-    public WebtoonRecyclerViewAdapter(ArrayList<WebtoonData> webtoonDataArrayList, Context context) {
-        this.context = context;
-        this.webtoonDataArrayList = webtoonDataArrayList;
-    }
-
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        private ImageFilterView sign;
-        private TextView title, subTitle;
-
-        public ViewHolder(@NonNull View view) {
-            super(view);
-            sign = view.findViewById(R.id.iv_filterImage);
-            title = view.findViewById(R.id.tv_filterImageTitle);
-            subTitle = view.findViewById(R.id.tv_filterImageSubTitle);
-
+        init {
+            sign = view.findViewById(R.id.iv_filterImage)
+            title = view.findViewById(R.id.tv_filterImageTitle)
+            subTitle = view.findViewById(R.id.tv_filterImageSubTitle)
         }
     }
 
-    @NonNull
-    @Override
-    public WebtoonRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.webtoon_recyclerview_item, viewGroup, false);
-
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, InfoActivity.class);
-                context.startActivity(intent);
-            }
-        });
-
-        return new WebtoonRecyclerViewAdapter.ViewHolder(view);
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(viewGroup.context)
+            .inflate(R.layout.webtoon_recyclerview_item, viewGroup, false)
+        view.setOnClickListener {
+            val intent = Intent(context, InfoActivity::class.java)
+            context.startActivity(intent)
+        }
+        return ViewHolder(view)
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull WebtoonRecyclerViewAdapter.ViewHolder holder, int position) {
-        WebtoonData webtoonData = webtoonDataArrayList.get(position);
-
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val webtoonData = webtoonDataArrayList!![position]
         Glide.with(context)
-                .load(webtoonData.getImg())
-                .into(holder.sign);
-        holder.title.setText(webtoonData.getTitle());
-        holder.subTitle.setText(webtoonData.getSub_title());
+            .load(webtoonData.img)
+            .into(holder.sign)
+        holder.title.text = webtoonData.title
+        holder.subTitle.text = webtoonData.sub_title
     }
 
-    @Override
-    public int getItemCount() {
-        return webtoonDataArrayList == null ? 0 : webtoonDataArrayList.size();
+    override fun getItemCount(): Int {
+        return if (webtoonDataArrayList == null) 0 else webtoonDataArrayList!!.size
     }
 }

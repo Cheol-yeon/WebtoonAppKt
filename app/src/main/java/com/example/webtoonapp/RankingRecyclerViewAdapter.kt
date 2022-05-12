@@ -1,80 +1,61 @@
-package com.example.webtoonapp;
+package com.example.webtoonapp
 
-import android.content.Context;
-import android.content.Intent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.content.Context
+import com.example.webtoonapp.RankingWebtoonData
+import androidx.recyclerview.widget.RecyclerView
+import androidx.constraintlayout.utils.widget.ImageFilterView
+import android.widget.TextView
+import com.example.webtoonapp.R
+import android.view.ViewGroup
+import android.view.LayoutInflater
+import android.content.Intent
+import android.view.View
+import com.example.webtoonapp.InfoActivity
+import com.bumptech.glide.Glide
+import java.util.ArrayList
 
-import androidx.annotation.NonNull;
-import androidx.constraintlayout.utils.widget.ImageFilterView;
-import androidx.recyclerview.widget.RecyclerView;
+class RankingRecyclerViewAdapter(
+    private val rankingWebtoonDataArrayList: ArrayList<RankingWebtoonData>?,
+    private val context: Context
+) : RecyclerView.Adapter<RankingRecyclerViewAdapter.ViewHolder>() {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val sign: ImageFilterView
+        val rank: TextView
+        val title: TextView
+        val subTitle: TextView
+        val hit: TextView
 
-import com.bumptech.glide.Glide;
-
-import java.util.ArrayList;
-
-public class RankingRecyclerViewAdapter extends RecyclerView.Adapter<RankingRecyclerViewAdapter.ViewHolder> {
-
-    private Context context;
-    private ArrayList<RankingWebtoonData> rankingWebtoonDataArrayList;
-
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        private ImageFilterView sign;
-        private TextView rank, title, subTitle, hit;
-
-        public ViewHolder(@NonNull View view) {
-            super(view);
-            sign = view.findViewById(R.id.iv_sign);
-            rank = view.findViewById(R.id.tv_rank);
-            title = view.findViewById(R.id.tv_webtoonTitle);
-            subTitle = view.findViewById(R.id.tv_webtoonSubTitle);
-            hit = view.findViewById(R.id.tv_hit);
-
+        init {
+            sign = view.findViewById(R.id.iv_sign)
+            rank = view.findViewById(R.id.tv_rank)
+            title = view.findViewById(R.id.tv_webtoonTitle)
+            subTitle = view.findViewById(R.id.tv_webtoonSubTitle)
+            hit = view.findViewById(R.id.tv_hit)
         }
     }
 
-    public RankingRecyclerViewAdapter(ArrayList<RankingWebtoonData> data, Context context) {
-        this.rankingWebtoonDataArrayList = data;
-        this.context = context;
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(viewGroup.context)
+            .inflate(R.layout.ranking_viewpager_item, viewGroup, false)
+        view.setOnClickListener {
+            val intent = Intent(context, InfoActivity::class.java)
+            context.startActivity(intent)
+        }
+        return ViewHolder(view)
     }
 
-    @NonNull
-    @Override
-    public RankingRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.ranking_viewpager_item, viewGroup, false);
-
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, InfoActivity.class);
-                context.startActivity(intent);
-            }
-        });
-
-        return new ViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull RankingRecyclerViewAdapter.ViewHolder holder, int position) {
-        RankingWebtoonData rankingWebtoonData = rankingWebtoonDataArrayList.get(position);
-
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val rankingWebtoonData = rankingWebtoonDataArrayList!![position]
         Glide.with(context)
-                .load(rankingWebtoonData.getImg())
-                .into(holder.sign);
-        holder.rank.setText(rankingWebtoonData.getRank());
-        holder.title.setText(rankingWebtoonData.getTitle());
-        holder.subTitle.setText(rankingWebtoonData.getSub_title());
-        holder.hit.setText(rankingWebtoonData.getHit());
-
+            .load(rankingWebtoonData.img)
+            .into(holder.sign)
+        holder.rank.text = rankingWebtoonData.rank
+        holder.title.text = rankingWebtoonData.title
+        holder.subTitle.text = rankingWebtoonData.sub_title
+        holder.hit.text = rankingWebtoonData.hit
     }
 
-    @Override
-    public int getItemCount() {
-        return rankingWebtoonDataArrayList ==null?0: rankingWebtoonDataArrayList.size();
+    override fun getItemCount(): Int {
+        return rankingWebtoonDataArrayList?.size ?: 0
     }
-
-
 }

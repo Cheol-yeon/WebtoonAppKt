@@ -98,7 +98,7 @@ public class MainFragment extends Fragment {
             "https://shtosebzjw.akamaized.net/assets/upfile/event_thumb/200_12861.jpg",
             "https://shtosebzjw.akamaized.net/assets/upfile/event_thumb/395_17081.png"
     };
-    
+
     public MainFragment() {
         // Required empty public constructor
     }

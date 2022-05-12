@@ -1,43 +1,33 @@
-package com.example.webtoonapp;
+package com.example.webtoonapp
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.webtoonapp.RankingFragment
 
-public class RankingAdapter extends FragmentStateAdapter {
-
-    private final int NUM_PAGES = 4;
-
-    public RankingAdapter(@NonNull FragmentActivity fragmentActivity) {
-        super(fragmentActivity);
-    }
-
-    @NonNull
-    @Override
-    public Fragment createFragment(int position) {
+class RankingAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
+    private val NUM_PAGES = 4
+    override fun createFragment(position: Int): Fragment {
 
         // 선택 된 탭에따른 값을 프래그먼트에 전달하여 알맞은 웹툰 정보 불러오기
-        switch (position) {
-            case 0 : {
-                return RankingFragment.newInstance("Realtime");
+        when (position) {
+            0 -> {
+                return RankingFragment.newInstance("Realtime")
             }
-            case 1 : {
-                return RankingFragment.newInstance("Update");
+            1 -> {
+                return RankingFragment.newInstance("Update")
             }
-            case 2 : {
-                return RankingFragment.newInstance("New");
+            2 -> {
+                return RankingFragment.newInstance("New")
             }
-            case 3 : {
-                return RankingFragment.newInstance("Sale");
+            3 -> {
+                return RankingFragment.newInstance("Sale")
             }
         }
-
-        return null;
+        return RankingFragment.newInstance("Sale")
     }
 
-    @Override
-    public int getItemCount() {
-        return NUM_PAGES;
+    override fun getItemCount(): Int {
+        return NUM_PAGES
     }
 }

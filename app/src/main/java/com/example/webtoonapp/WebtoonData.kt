@@ -1,50 +1,23 @@
-package com.example.webtoonapp;
+package com.example.webtoonapp
 
-public class WebtoonData {
+class WebtoonData {
+    var img: String? = null
+    var title: String? = null
+    var sub_title: String? = null
 
-    public String img;
-    public String title;
-    public String sub_title;
-
-    public WebtoonData(String img, String title, String sub_title) {
-        this.img = img;
-        this.title = title;
-        this.sub_title = sub_title;
+    constructor(img: String?, title: String?, sub_title: String?) {
+        this.img = img
+        this.title = title
+        this.sub_title = sub_title
     }
 
-    public WebtoonData() {
-    }
+    constructor() {}
 
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getSub_title() {
-        return sub_title;
-    }
-
-    public void setSub_title(String sub_title) {
-        this.sub_title = sub_title;
-    }
-
-    @Override
-    public String toString() {
+    override fun toString(): String {
         return "KeywordWebtoonData{" +
                 "img='" + img + '\'' +
                 ", title='" + title + '\'' +
                 ", sub_title='" + sub_title + '\'' +
-                '}';
+                '}'
     }
 }
